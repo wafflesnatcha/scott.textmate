@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Documentation for ‘String#gsub’</title>
+    <link rel="stylesheet" href="file:///Applications/Developer/TextMate.app/Contents/SharedSupport/Support/themes/bright/style.css" type="text/css" charset="utf-8" media="screen">
+    <link rel="stylesheet" href="file:///Applications/Developer/TextMate.app/Contents/SharedSupport/Support/themes/dark/style.css" type="text/css" charset="utf-8" media="screen">
+    <link rel="stylesheet" href="file:///Applications/Developer/TextMate.app/Contents/SharedSupport/Support/themes/default/style.css" type="text/css" charset="utf-8" media="screen">
+    <link rel="stylesheet" href="file:///Applications/Developer/TextMate.app/Contents/SharedSupport/Support/themes/halloween/style.css" type="text/css" charset="utf-8" media="screen">
+    <link rel="stylesheet" href="file:///Applications/Developer/TextMate.app/Contents/SharedSupport/Support/themes/night/style.css" type="text/css" charset="utf-8" media="screen">
+    <link rel="stylesheet" href="file:///Applications/Developer/TextMate.app/Contents/SharedSupport/Support/themes/shiny/style.css" type="text/css" charset="utf-8" media="screen">
+    <link rel="stylesheet" href="file:///Users/scott/Library/Application%20Support/TextMate/Themes/Webpreview/scott/style.css" type="text/css" charset="utf-8" media="screen">
+    <link rel="stylesheet" href="file:///Applications/Developer/TextMate.app/Contents/SharedSupport/Support/themes/default/print.css" type="text/css" charset="utf-8" media="print">
+    <link rel="stylesheet" href="file:///Users/scott/Library/Application%20Support/TextMate/Themes/Webpreview/scott/print.css" type="text/css" charset="utf-8" media="print">
+    <script src="file:///Applications/Developer/TextMate.app/Contents/SharedSupport/Support/script/default.js"    type="text/javascript" charset="utf-8"></script>
+    <script src="file:///Applications/Developer/TextMate.app/Contents/SharedSupport/Support/script/webpreview.js" type="text/javascript" charset="utf-8"></script>
+    <script src="file:///Applications/Developer/TextMate.app/Contents/SharedSupport/Support/script/sortable.js"   type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+    var image_path = "file:///Applications/Developer/TextMate.app/Contents/SharedSupport/Support/images/";
+    </script>
+    <script type="text/javascript" charset="utf-8">
+    function ri (arg, _history) {
+        TextMate.isBusy = true;
+        var res = TextMate.system("RUBYLIB=/Applications/Developer/TextMate.app/Contents/SharedSupport/Support/lib /Users/scott/Library/Application\\ Support/TextMate/Pristine\\ Copy/Bundles/ruby.tmbundle/Support/bin/linked_ri.rb 2>&1 '" + arg + "' 'js'", null).outputString;
+        document.getElementById("actual_output").innerHTML = res;
+        TextMate.isBusy = false;
+        if(!_history)
+        {
+            var history = document.getElementById('search_history');
+            var new_option = document.createElement('option');
+            new_option.setAttribute('value', arg);
+            new_option.appendChild(document.createTextNode(arg));
+            history.appendChild(new_option);
+            history.value = arg;
+        }
+    }
+    </script>
+
+</head>
+<body id="tm_webpreview_body" class="scott">
+    <div id="tm_webpreview_header">
+        <img id="gradient" src="file:///Users/scott/Library/Application Support/TextMate/Themes/Webpreview/scott/images/header.png" alt="header">
+        <p class="headline">Documentation for ‘String#gsub’</p>
+        <p class="type">GNU bash, version 3.2.48(1)-release (x86_64-apple-darwin10.0)</p>
+        <img id="teaser" src="file:///Users/scott/Library/Application Support/TextMate/Themes/Webpreview/scott/images/teaser.png" alt="teaser">
+        <div id="theme_switcher">
+            <form action="#" onsubmit="return false;">
+                <div>
+                    Theme:
+                    <select onchange="selectTheme(event);" id="theme_selector">
+                        <option value="bright" title="/Applications/Developer/TextMate.app/Contents/SharedSupport/Support/themes/bright">Bright</option>
+                        <option value="dark" title="/Applications/Developer/TextMate.app/Contents/SharedSupport/Support/themes/dark">Dark</option>
+                        <option value="default" title="/Applications/Developer/TextMate.app/Contents/SharedSupport/Support/themes/default">Default</option>
+                        <option value="halloween" title="/Applications/Developer/TextMate.app/Contents/SharedSupport/Support/themes/halloween">Halloween</option>
+                        <option value="night" title="/Applications/Developer/TextMate.app/Contents/SharedSupport/Support/themes/night">Night</option>
+                        <option value="scott" title="/Users/scott/Library/Application Support/TextMate/Themes/Webpreview/scott">Scott</option>
+                        <option value="shiny" title="/Applications/Developer/TextMate.app/Contents/SharedSupport/Support/themes/shiny">Shiny</option>
+                    </select>
+                </div>
+                <script type="text/javascript" charset="utf-8">document.getElementById('theme_selector').value = 'scott';</script>
+            </form>
+        </div>
+    </div>
+    <div id="tm_webpreview_content" class="scott">
+        <select id="search_history" style="float: right;">
+            <option value="String#gsub" selected="selected">String#gsub</option>
+        </select>
+
+        <script type="text/javascript" charset="utf-8">
+        document.getElementById('search_history').addEventListener('change', function(e) {
+            ri(document.getElementById('search_history').value, true);
+        }, false);
+        </script>
+
+        <div id="actual_output" style="margin-top: 3em"><h2><a href="javascript:ri('String')">String</a>#gsub</h2>
+            <pre>
+                str.gsub(pattern, replacement)       => new_str
+                str.gsub(pattern) {|match| block }   => new_str
+                <hr>
+                Returns a copy of _str_ with _all_ occurrences of _pattern_
+                replaced with either _replacement_ or the value of the block. The
+                _pattern_ will typically be a +Regexp+; if it is a +String+ then no
+                regular expression metacharacters will be interpreted (that is
+                +/\d/+ will match a digit, but +'\d'+ will match a backslash
+                followed by a 'd').
+
+                If a string is used as the replacement, special variables from the
+                match (such as +$&amp;+ and +$1+) cannot be substituted into it, as
+                substitution into the string occurs before the pattern match
+                starts. However, the sequences +\1+, +\2+, and so on may be used to
+                interpolate successive groups in the match.
+
+                In the block form, the current match string is passed in as a
+                parameter, and variables such as +$1+, +$2+, +$`+, +$&amp;+, and +$'+
+                will be set appropriately. The value returned by the block will be
+                substituted for the match on each call.
+
+                The result inherits any tainting in the original string or any
+                supplied replacement string.
+
+                "hello".gsub(/[aeiou]/, '*')              #=> "h*ll*"
+                "hello".gsub(/([aeiou])/, '&lt;\1>')         #=> "h&lt;e>ll&lt;o>"
+                "hello".gsub(/./) {|s| s[0].to_s + ' '}   #=> "104 101 108 108 111 "
+            </pre>
+        </div>
+
+
+        <!-- MISC CONTENT -->
+        <h1>Some other Content</h1>
+        <h2>1 Finance</h2>
+		<p>The BBC has the second largest budget of any UK broadcaster with an operating expenditure of £4.26&nbsp;billion in 2009/10<sup><a href="#cite_note-29"><span>[</span>30<span>]</span></a></sup>compared to £5.9&nbsp;billion for <a href="/wiki/British_Sky_Broadcasting">British Sky Broadcasting</a>,<sup><a href="#cite_note-30"><span>[</span>31<span>]</span></a></sup>£1.9&nbsp;billion for <a href="/wiki/ITV">ITV</a><sup><a href="#cite_note-31"><span>[</span>32<span>]</span></a></sup>and £214&nbsp;million in 2007 for <a href="/wiki/GCap_Media">GCap Media</a>(the largest commercial radio broadcaster).<sup><a href="#cite_note-32"><span>[</span>33<span>]</span></a></sup></p>
+		<h3>1.1 Revenue</h3><div>See also: <a href="/wiki/Television_licence">Television licence</a>&nbsp;and <a href="/wiki/Television_licensing_in_the_United_Kingdom">Television licensing in the United Kingdom</a></div><p>The principal means of funding the BBC is through the television licence, costing £145.50 per year per household (as of April 2010). Such a licence is required to receive broadcast television within the UK, however no licence is required to own a television used for other means, or for sound only radio sets (though a separate licence for these was also required for non-TV households until 1971) The cost of a television licence is set by the government and enforced by the criminal law. A discount is available for households with only black-and-white television sets. A 50% discount is also offered to registered blind.<sup><a href="#cite_note-33"><span>[</span>34<span>]</span></a></sup>The revenue is collected privately and is paid into the central government <a href="/wiki/Consolidated_Fund">Consolidated Fund</a>, a process defined in the <a href="/wiki/Communications_Act_2003">Communications Act 2003</a>. This <i>TV Licensing</i>collection is currently carried out by Capita, an outside agency. Funds are then allocated by the Department of Culture, Media and Sport (DCMS) and the Treasury and approved by Parliament via legislation. Additional revenues are paid by the Department for Work and Pensions to compensate for subsidised licences for eligible over-75 year olds.</p>
+		<blockquote>Income from commercial enterprises and from overseas sales of its catalogue of programmes has substantially increased over recent years,<sup><a href="#cite_note-34"><span>[</span>35<span>]</span></a></sup>with <a href="/wiki/BBC_Worldwide">BBC Worldwide</a>contributing some £145&nbsp;million to the BBC's core public service business.</blockquote>
+		<p>According to the BBC's 2008–2009 Annual Report,<sup><a href="#cite_note-35"><span>[</span>36<span>]</span></a></sup>its income can be broken down, as follows:</p>
+		<ul>
+		    <li>£3,493.8&nbsp;million in licence fees collected from householders;</li>
+		    <li>£775.9&nbsp;million from BBC Commercial Businesses;</li>
+		    <li>£294.6&nbsp;million from government grants;</li>
+		    <li>£41.1&nbsp;million from other income, such as providing content to overseas broadcasters and concert ticket sales;</li>
+		</ul>
+		<hr>
+		<p>The licence fee has, however, attracted criticism. It has been argued that in an age of multi stream, multi-channel availability, an obligation to pay a licence fee is no longer appropriate. The BBC's use of private sector company <a href="/wiki/Capita_Group">Capita Group</a>to send letters to premises not paying the licence fee has been criticised, especially as there have been cases where such letters have been sent to premises which are up to date with their payments, or do not require a TV licence.<sup><a href="#cite_note-36"><span>[</span>37<span>]</span></a></sup>The BBC uses an advertising campaign to inform customers of the requirement to pay the licence fee. These letters and adverts have been criticised by <a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a>MPs <a href="/wiki/Boris_Johnson">Boris Johnson</a>and <a href="/wiki/Ann_Widdecombe">Ann Widdecombe</a>, for having a threatening nature and language used to scare evaders into paying.<sup><a href="#cite_note-37"><span>[</span>38<span>]</span></a></sup><sup><a href="#cite_note-38"><span>[</span>39<span>]</span></a></sup>Audio clips and television broadcasts are used to inform listeners of the BBC's comprehensive database.<sup><a href="#cite_note-39"><span>[</span>40<span>]</span></a></sup>There are a number of pressure groups campaigning on the issue of the licence fee.<sup><a href="#cite_note-40"><span>[</span>41<span>]</span></a></sup></p>
+		<h3>1.2 Expenditure</h3>
+		<p>The BBC gave two forms of expenditure statement for the financial year 2005–2006.</p>
+		<p>The amount of each licence fee spent monthly<sup><a href="#cite_note-41"><span>[</span>42<span>]</span></a></sup>breaks down as follows:</p>
+		<div><a href="/wiki/File:BBC_licence_fee_expenditure_percentage_2005-6_Redvers.png"><img alt="BBC licence fee expenditure percentage 2005-6 Redvers.png" src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/BBC_licence_fee_expenditure_percentage_2005-6_Redvers.png/450px-BBC_licence_fee_expenditure_percentage_2005-6_Redvers.png" width="450" height="337"></a></div><table><tr><th>Department</th><th>Monthly cost (<a href="/wiki/Pound_sterling" title="Pound sterling">GBP</a>)</th></tr>
+		<tr style="background:#ffe0e0"><th style="background:#ffe0e0"><a href="/wiki/BBC_One">BBC ONE</a></th><td>£3.52</td></tr>
+		<tr style="background:#ffe0ff"><th style="background:#ffe0ff"><a href="/wiki/BBC_Two">BBC TWO</a></th><td>£1.52</td></tr>
+		<tr style="background:#ffffe0"><th style="background:#ffffe0">Transmission and collection costs</th><td>£1.08</td></tr>
+		<tr style="background:#e0ffff"><th style="background:#e0ffff">Nations and English Regions television</th><td>£1.04</td></tr>
+		<tr style="background:#e0ffe0"><th style="background:#e0ffe0"><a href="/wiki/BBC_Radio">BBC Radio</a>1, 2, 3, 4 and Five Live</th><td>£1.02</td></tr>
+		<tr style="background:#ffdead"><th style="background:#ffdead">Digital television channels</th><td>£1.00</td></tr>
+		<tr style="background:#ffe0e0"><th style="background:#ffe0e0">Nations' and local radio</th><td>68p</td></tr>
+		<tr style="background:#ffe0ff"><th style="background:#ffe0ff"><a href="/wiki/BBC_Online">BBC Online</a></th><td>36p</td></tr>
+		<tr style="background:#ffffe0"><th style="background:#ffffe0"><a href="/wiki/BBC_Jam">BBC Jam</a></th><td>14p</td></tr>
+		<tr style="background:#e0ffff"><th style="background:#e0ffff"><a href="/wiki/Digital_Audio_Broadcasting" title="Digital Audio Broadcasting">Digital radio stations</a></th><td>10p</td></tr>
+		<tr style="background:#e0ffe0"><th style="background:#e0ffe0">Interactive TV (<a href="/wiki/BBC_Red_Button">BBC Red Button</a>)</th><td>8p</td></tr>
+		<tr><th><i>Total</i></th><td><i><b>£10.54</b></i></td></tr></table>
+        <p>The total broadcasting spend for 2005–2006<sup><a href="#cite_note-42"><span>[</span>43<span>]</span></a></sup>is given as:</p>
+		<div><a href="/wiki/File:BBC_broadcasting_expenditure_2005-6_Redvers.png"><img alt="BBC broadcasting expenditure 2005-6 Redvers.png" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/BBC_broadcasting_expenditure_2005-6_Redvers.png/450px-BBC_broadcasting_expenditure_2005-6_Redvers.png" width="450" height="337"></a></div>
+		<table><tr><th>Department</th><th>Total cost (<a href="/wiki/Pound_sterling" title="Pound sterling">£million</a>)</th></tr>
+		<tr style="background:#ffe0e0"><th style="background:#ffe0e0">Television</th><td>1443</td></tr>
+		<tr style="background:#ffffe0"><th style="background:#ffffe0">Radio</th><td>218</td></tr>
+		<tr style="background:#99ccff"><th style="background:#99ccff">BBC Online</th><td>72</td></tr>
+		<tr style="background:#ffe0e0"><th style="background:#ffe0e0">BBC jam</th><td>36</td></tr>
+		<tr style="background:#e0ffff"><th style="background:#e0ffff">Interactive TV (BBCi)</th><td>18</td></tr>
+		<tr style="background:#ffdead"><th style="background:#ffdead">Local radio and regional television</th><td>370</td></tr>
+		<tr style="background:#e0ffe0"><th style="background:#e0ffe0">Programme related spend</th><td>338</td></tr>
+		<tr style="background:#ffe0ff"><th style="background:#ffe0ff">Overheads and Digital UK</th><td>315</td></tr>
+		<tr style="background:#ffffe0"><th style="background:#ffffe0">Restructuring</th><td>107</td></tr>
+		<tr style="background:#99ccff"><th style="background:#99ccff">Transmission and collection costs</th><td>320</td></tr>
+		<tr><th><i>Total</i></th><td><i><b>3237</b></i></td></tr></table>
+        <h2>2 Headquarters and regional offices</h2>
+        <div><div style="width:152px;"><a href="/wiki/File:Bbc_broadcasting_house_front.jpg"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Bbc_broadcasting_house_front.jpg/150px-Bbc_broadcasting_house_front.jpg" width="150" height="209"></a><div>The headquarters of the BBC at <a href="/wiki/Broadcasting_House">Broadcasting House</a>in <a href="/wiki/Portland_Place">Portland Place</a>, London, England</div></div></div>
+
+
+    </div>
+</body>
+</html>

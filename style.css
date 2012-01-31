@@ -1,0 +1,229 @@
+
+body.scott {
+	background: #fff;
+	color: #000;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 0;
+	padding: 44px 0 0;
+}
+
+.scott h1,
+.scott h2,
+.scott h3,
+.scott h4,
+.scott h5,
+.scott h6,
+.scott #tm_webpreview_header .headline {
+	color: #000;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: 500;
+	margin: 0 0 .5em;
+}
+
+.scott a {
+	color: #1525ab;
+	text-decoration: none;
+}
+.scott a:visited {
+	color: #680094;
+}
+.scott a:hover {
+	text-decoration: underline;
+}
+
+.scott blockquote {
+	color: #444;
+}
+
+.scott code,
+.scott pre,
+.scott tt {
+	font-family: Menlo, Monaco, "Courier New", monospace;
+	font-size: inherit;
+	word-wrap: break-word;
+}
+
+.scott pre {
+	background: #eee;
+	border-radius: 3px;
+	margin: 1em 0;
+	padding: .6em;
+}
+
+.scott hr {
+	background-color: #e0e0e0;
+	border: none;
+	height: 1px;
+	margin: 1em 0;
+	padding: 0;
+}
+
+.scott li > p {
+	margin: 0;
+}
+
+.scott #tm_webpreview_header {	
+	background: none;
+	color: #000;
+	display: block;
+	font-size: inherit;
+	left: 0;
+	overflow: visible;
+	padding: 0;
+	position: fixed;
+	text-shadow: 0 1px 0 rgba(255,255,255,.4);
+	top: 0;
+	width: 100%;
+	z-index: 10000;
+}
+
+.scott #tm_webpreview_header #gradient,
+.scott #tm_webpreview_header #teaser {
+	display: none;
+}
+
+.scott #tm_webpreview_header .headline {
+	background-color: transparent;
+	background-image:
+		-webkit-gradient(linear, 0% 0%, 0 100%, from(rgba(215,215,215,.88)), to(rgba(180,180,180,.75))),
+		url("images/noise.png");
+	border: none;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin: 0;
+	padding: .2em .6em;
+	display: block;
+	white-space: nowrap;
+	-webkit-background-origin: border-box;
+	-webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.8), inset 0 -1px 0 0 rgba(255,255,255,.15);
+	-webkit-box-sizing: border-box;
+}
+
+.scott #tm_webpreview_header #actions {
+	font-size: 8pt;
+	position: absolute;
+	right: 10em;
+	top: 2.3em;
+	z-index: 2000;
+}
+/**
+ * test
+ */
+.scott #tm_webpreview_header .type {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(89,9,89,.9)), to(rgba(153,15,135,.9)));
+	border: 1px solid rgba(0,0,0,.1);
+	border-bottom-color:  rgba(0,0,0,.5);
+	border-top: none;
+	border-radius: 0 0 3px 3px;
+	color: #fff;
+	float: left;
+	font-size: 90%;
+	font-weight: bold;
+	margin: 0 5px;
+	min-height: 1px;
+	padding: 2px 10px;
+	position: static;
+	text-shadow: 0 1px 0 #000;
+	width: auto;
+	white-space: nowrap;
+	-webkit-background-origin: border-box;
+	-webkit-box-shadow: rgba(0,0,0,.3) 0 0 1px 0;
+}
+
+.scott #theme_switcher {
+	color: #444;
+	font-size: 10px;
+	font-weight: bold;
+	height: auto;
+	margin: 0;
+	opacity: 1;
+	padding: 3px;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1500;
+}
+
+.scott #theme_selector {
+	-webkit-appearance: none;
+	-webkit-background-origin: border-box;
+	-webkit-box-sizing: border-box;
+	-webkit-box-shadow:
+		1px 0 0 0 rgba(255,255,255,.15),
+		-1px 0 0 0 rgba(255,255,255,.15),
+		0 1px 0 0 rgba(255,255,255,.2);
+	border: 1px solid rgba(100,100,100,.5);
+	border-radius: 3px;
+	background-color: #ddd;
+	background-image:
+		url("images/arrow_down.png"),
+		-webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,.7)), to(rgba(201,201,201,.7)));
+	background-position: right center;
+	background-repeat: no-repeat, repeat-x;
+	color: #444;
+	padding: 2px 5px 3px;
+	font-weight: bold;
+}
+.scott #theme_selector:hover {
+	background-color: #fff;
+}
+.scott #tm_webpreview_footer {
+	background: #292929;
+	bottom: 0;
+	color: #fff;
+	display: block;
+	left: 0;
+	max-height: 50px;
+	overflow: visible;
+	padding: 0;
+	position: fixed;
+	text-shadow: 0 1px 0 rgba(255,255,255,.4);
+	width: 100%;
+	z-index: 100;
+}
+
+.scott #tm_webpreview_footer p {
+	margin: 0;
+	padding: 0;
+}
+
+.scott #tm_webpreview_content {
+	background: none;
+	margin: 0;
+	padding: 10px;
+	position: static;
+}
+
+
+.scott #tm_webpreview_content > :first-child {
+	margin-top: 0;
+}
+
+.scott .pro_table {
+	font-size: 12px;
+}
+.scott .pro_table th {
+	font-weight: bold;
+	padding: 4px 8px 4px 8px;
+	text-align: left;
+}
+.scott .pro_table td {
+	padding: 8px;
+	vertical-align: top;
+}
+.scott .pro_table p {
+	margin: 0;
+}
+.scott .pro_table p + p {
+	margin-top: 1em;
+}
+
+.scott div.footnotes {
+   padding: 1em;
+   font-size: 90%;
+}
+
+.scott .alternate {
+	background-color: #F0F0F0;
+}
