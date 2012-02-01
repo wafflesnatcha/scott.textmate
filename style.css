@@ -196,7 +196,7 @@ body.scott {
 }
 
 .scott #tm_webpreview_content :first-child {
-	margin: auto;
+	margin-top: auto;
 }
 .scott #tm_webpreview_content > :first-child {
 	margin-top: 0;
