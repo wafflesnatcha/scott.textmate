@@ -48,7 +48,7 @@ body.scott {
 	background: #eee;
 	border-radius: 3px;
 	margin: 1em 0;
-	padding: .6em;
+	padding: .6em .8em;
 }
 
 .scott hr {
@@ -195,7 +195,9 @@ body.scott {
 	position: static;
 }
 
-
+.scott #tm_webpreview_content :first-child {
+	margin: auto;
+}
 .scott #tm_webpreview_content > :first-child {
 	margin-top: 0;
 }
