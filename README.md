@@ -1,8 +1,5 @@
-Download
---------
-
-[.zip](https://github.com/downloads/wafflesnatcha/scott.textmate/scott.zip)
-[.tar.gz](https://github.com/downloads/wafflesnatcha/scott.textmate/scott.tar.gz)
+[Download scott.zip](https://github.com/downloads/wafflesnatcha/scott.textmate/scott.zip)  
+[Download scott.tar.gz](https://github.com/downloads/wafflesnatcha/scott.textmate/scott.tar.gz)
 
 Install
 -------
