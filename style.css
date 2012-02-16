@@ -41,8 +41,6 @@ body.scott {
 .scott tt {
 	font-family: Menlo, Monaco, "Courier New", monospace;
 	font-size: inherit;
-	word-wrap: normal;
-	white-space: pre;
 }
 
 .scott pre {
@@ -51,6 +49,8 @@ body.scott {
 	margin: 1em 0;
 	overflow: auto;
 	padding: .6em .8em;
+	white-space: pre;
+	word-wrap: normal;
 }
 
 .scott hr {
