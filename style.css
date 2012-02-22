@@ -96,9 +96,14 @@ body.scott {
 	font-size: 1.5em;
 	font-weight: bold;
 	margin: 0;
-	min-height: 28px;
-	padding: .2em .6em;
+	height: 28px;
+	line-height: 28px;
+	overflow-x: hidden;
+	padding: 0 200px 0 10px;
+	position: relative;
+	text-overflow: ellipsis;
 	white-space: nowrap;
+	z-index: 10;
 }
 
 .scott #tm_webpreview_header #actions {
@@ -142,6 +147,10 @@ body.scott {
 	right: 0;
 	top: 0;
 	z-index: 100;
+}
+
+.scott #theme_switcher form {
+	padding: 0;
 }
 
 .scott #theme_selector {
@@ -189,7 +198,6 @@ body.scott {
 	background: none;
 	margin: 0;
 	padding: 10px;
-	position: static;
 }
 
 .scott #tm_webpreview_content :first-child {
