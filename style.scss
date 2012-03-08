@@ -1,0 +1,297 @@
+@import "compass/css3";
+
+$default: #000;
+$default_bg: #fff;
+
+body.scott {
+	background: $default_bg;
+	color: $default;
+	font: {
+		family: "Lucida Sans", "Lucida Grande", Helvetica, sans-serif;
+		size: 12px;
+	}
+	margin: 0;
+	padding: 50px 0 0;
+}
+
+.scott {
+	#{headings()} {
+		color: $default;
+		font: {
+			style: normal;
+			weight: 500;
+		}
+		margin: .5em 0;
+	}
+	h1,	#tm_webpreview_header .headline {
+		font-size: 2em;
+	}
+	h2,	#tm_webpreview_header .type {
+		font-size: 1.5em;
+	}
+	h3 {
+		font-size: 1.17em;
+	}
+	h4 {}
+	h5 {
+		font-size: 0.83em;
+	}
+	h6 {
+		font-size: 0.67em;
+	}
+
+	dl, dt, dd {
+		margin: {
+			left: 0;
+			right: 0;
+		}
+	}
+
+	a {
+		color: #1525ab;
+		text-decoration: none;
+
+		&:visited {
+			color: #680094;
+		}
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	blockquote {
+		color: #444;
+	}
+
+	code,
+	pre,
+	tt {
+		font: {
+			family: Menlo, Monaco, "Courier New", monospace;
+			size: inherit;
+		}
+	}
+
+	pre {
+		@include border-radius(4px);
+		@include box-sizing(border-box);
+		background: #eee;
+		margin: 1em 0;
+		overflow: auto;
+		padding: .6em .8em;
+		white-space: pre;
+		word-wrap: normal;
+		position: relative;
+	}
+
+	hr {
+		background-color: #e0e0e0;
+		border: none;
+		height: 1px;
+		margin: 1em 0;
+		padding: 0;
+	}
+
+	li > p {
+		margin: 0;
+	}
+}
+
+.scott #tm_webpreview_header {
+	background: none;
+	color: $default;
+	display: block;
+	font-size: inherit;
+	height: 28px;
+	left: 0;
+	overflow: visible;
+	padding: 0;
+	position: fixed;
+	@include text-shadow(0 1px 0 rgba(255,255,255,.4));
+	top: 0;
+	width: 100%;
+	z-index: 10000;
+
+	#gradient,
+	#teaser {
+		display: none;
+	}
+
+	.headline {
+		@include background-origin(border-box);
+		@include background-image(
+			linear-gradient(top, rgba(215,215,215,.88), rgba(180,180,180,.75)),
+			url("images/noise.png")
+		);
+		background-color: transparent;
+		border: none;
+		@include box-shadow(0 1px 2px rgba(0,0,0,.8), 0 -1px 0 rgba(255,255,255,.15) inset);
+		@include box-sizing(border-box);
+		font: {
+			family: "Helvetica Neue", Helvetica, sans-serif;
+			size: 18px;
+			weight: bold;
+		}
+		margin: 0;
+		height: 28px;
+		line-height: 28px;
+		overflow-x: hidden;
+		padding: 0 200px 0 10px;
+		position: relative;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		z-index: 10;
+	}
+
+	.type {
+		@include background-image(linear-gradient(top, rgba(89,9,89,.9), rgba(153,15,135,.9)));
+		@include background-origin(border-box);
+		border: {
+			bottom: 1px solid rgba(0,0,0,.4);
+			left: 1px solid rgba(0,0,0,.1);
+			right: 1px solid rgba(0,0,0,.1);
+			top: none;
+		}
+		@include border-radius(0 0 3px 3px);
+		@include box-shadow(rgba(0,0,0,.3) 0 0 1px 0);
+		color: #fff;
+		float: left;
+		font: {
+			size: 11px;
+			weight: bold;
+		}
+		margin: 0 5px;
+		min-height: 1px;
+		padding: 2px 10px;
+		position: static;
+		@include text-shadow(0 1px 0 #000);
+		white-space: nowrap;
+		width: auto;
+	}
+}
+
+.scott #theme_switcher {
+	@include box-sizing(border-box);
+	color: #4a4a4a;
+	font-size: 10px;
+	font-weight: bold;
+	margin: 0;
+	opacity: 1;
+	height: 28px;
+	max-width: 200px;
+	padding: 2px 10px;
+	position: absolute;
+	right: 0;
+	text-align: right;
+	top: 0;
+	z-index: 100;
+}
+
+.scott #theme_switcher form {
+	padding: 0;
+}
+
+.scott #theme_selector {
+	@include appearance(none);
+	background-color: #ddd;
+	@include background-image(
+		url("images/arrow_down.png"),
+		linear-gradient(top, rgba(255,255,255,.7), rgba(201,201,201,.7))
+	);
+	@include background-origin(border-box);
+	background-position: right center;
+	background-repeat: no-repeat, repeat-x;
+	border: 1px solid rgba(100,100,100,.5);
+	@include border-radius(3px);
+	@include box-shadow(
+		1px 0 0 rgba(255,255,255,.15),
+		-1px 0 0 rgba(255,255,255,.15),
+		0 1px 0 rgba(255,255,255,.2)
+	);
+	@include box-sizing(border-box);
+	color: #444;
+	font-weight: bold;
+	max-width: 130px;
+	outline: none;
+	padding: 2px 5px 3px;
+}
+
+.scott #theme_selector:hover {
+	background-color: #fff;
+}
+
+.scott #tm_webpreview_footer {
+	background: #292929;
+	bottom: 0;
+	color: #fff;
+	display: block;
+	left: 0;
+	max-height: 50px;
+	overflow: visible;
+	padding: 0;
+	position: fixed;
+	@include text-shadow(0 1px 0 rgba(255,255,255,.4));
+	width: 100%;
+	z-index: 100;
+}
+
+.scott #tm_webpreview_footer p {
+	margin: 0;
+	padding: 0;
+}
+
+.scott #tm_webpreview_content {
+	background: none;
+	margin: 10px;
+	padding: 0;
+}
+
+.scott #tm_webpreview_content :first-child {
+	margin-top: auto;
+}
+
+.scott .pro_table {
+	border-bottom: 2px solid #eaeaea;
+	font-size: inherit;
+}
+
+.scott .pro_table th,
+.scott .pro_table td {
+	background-color: $default_bg;
+	padding: 4px 8px;
+}
+
+.scott .pro_table th {
+	@include background-image(linear-gradient(top, rgba(255,255,255,0), rgba(150,150,150,.15)));
+	@include background-origin(content-box);
+	border-bottom: 1px solid #bbb;
+	@include box-shadow(0 -3px 4px -3px rgba(0,0,0,.2) inset);
+	font-weight: bold;
+	text-align: left;
+}
+
+.scott .pro_table td {
+	vertical-align: top;
+}
+
+.scott .pro_table > tbody > tr:nth-child(even) > td {
+	background-color: #f3f6fa;
+}
+
+.scott .pro_table p {
+	margin: 0;
+}
+
+.scott .pro_table p + p {
+	margin-top: 1em;
+}
+
+.scott div.footnotes {
+	padding: 1em;
+	font-size: 90%;
+}
+
+.scott .alternate {
+	background-color: #f0f0f0;
+}
