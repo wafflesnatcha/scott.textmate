@@ -6,25 +6,28 @@ $experimental-support-for-opera: false;
 
 @import "compass/css3";
 
-$font_family: "Lucida Grande", "Lucida Sans", Helvetica, sans-serif;
-$font_family_monospace: Menlo, Monaco, "Courier New", monospace;
-$font_size: 12px;
+$font_body: "Lucida Grande", "Lucida Sans", Helvetica, sans-serif;
+$font_code: Menlo, Monaco, "Courier New", monospace;
+$font_heading: "Helvetica Neue", Helvetica, sans-serif;
 
-$headline_font_family: "Helvetica Neue", Helvetica, sans-serif;
-$headline_font_size: 18px;
+$font_size: 12px;
 
 $default: #000;
 $default_bg: #fff;
+
+$header_height: 28px;
 
 body.scott {
 	background: $default_bg;
 	color: $default;
 	font: {
-		family: $font_family;
+		family: $font_body;
 		size: $font_size;
 	}
+	height: 100%;
 	margin: 0;
-	padding: 50px 0 0;
+	overflow: hidden;
+	padding: 0;
 }
 
 .scott {
@@ -34,7 +37,6 @@ body.scott {
 			style: normal;
 			weight: 500;
 		}
-		margin: .5em 0;
 	}
 
 	h1 { font-size: 2em; }
@@ -44,13 +46,6 @@ body.scott {
 	h5 { font-size: 0.83em; }
 	h6 { font-size: 0.67em; }
 
-	dl, dt, dd {
-		margin: {
-			left: 0;
-			right: 0;
-		}
-	}
-
 	a {
 		color: #1525ab;
 		text-decoration: none;
@@ -59,32 +54,59 @@ body.scott {
 			color: #680094;
 		}
 
-		&:hover {
+		&:hover, &:active, &:focus {
 			text-decoration: underline;
 		}
 	}
 
 	blockquote {
 		color: #444;
+		font-style: italic;
+		margin: {
+			left: 40px;
+			right: 0;
+		}
 	}
 
-	code, pre, tt {
+	#{headings()}, p, pre, blockquote {
+		-webkit-margin-after: 15px;
+		-webkit-margin-before: 15px;
+		-webkit-margin-collapse: collapse;
+
+		&:first-of-type {
+			margin-top: 0;
+		}
+	}
+
+	dl, dt, dd {
+		margin: {
+			left: 0;
+			right: 0;
+		}
+	}	
+
+	code, pre, tt, textarea {
 		font: {
-			family: $font_family_monospace;
+			family: $font_code;
 			size: inherit;
 		}
 	}
 
 	pre {
-		@include border-radius(4px);
+		@include border-radius(3px);
 		@include box-sizing(border-box);
 		background: #eee;
 		margin: 1em 0;
 		overflow: auto;
 		padding: .6em .8em;
+		position: relative;
 		white-space: pre;
 		word-wrap: normal;
-		position: relative;
+		
+		code {
+			white-space: pre;
+			word-wrap: normal;			
+		}
 	}
 
 	hr {
@@ -101,17 +123,19 @@ body.scott {
 
 	#tm_webpreview_header {
 		background: none;
+		border: none;
 		color: $default;
 		display: block;
 		font-size: inherit;
-		height: 28px;
-		left: 0;
+		height: $header_height;
+		left: -2px;
 		overflow: visible;
 		padding: 0;
 		position: fixed;
+		right: -2px;
 		@include text-shadow(0 1px 0 rgba(255,255,255,.4));
 		top: 0;
-		width: 100%;
+		width: auto;
 		z-index: 10000;
 
 		#gradient,
@@ -127,18 +151,18 @@ body.scott {
 			);
 			background-color: transparent;
 			border: none;
-			@include box-shadow(0 1px 2px rgba(0,0,0,.8), 0 -1px 0 rgba(255,255,255,.15) inset);
+			@include box-shadow(0 1px 0 rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.5), 0 -1px 0 rgba(255,255,255,0.15) inset);
 			@include box-sizing(border-box);
 			font: {
-				family: $headline_font_family;
-				size: $headline_font_size;
+				family: $font_heading;
+				size: 18px;
 				weight: bold;
 			}
 			margin: 0;
-			height: 28px;
-			line-height: 28px;
+			height: $header_height;
+			line-height: $header_height;
 			overflow-x: hidden;
-			padding: 0 200px 0 10px;
+			padding: 0 200px 0 12px;
 			position: relative;
 			text-overflow: ellipsis;
 			white-space: nowrap;
@@ -162,13 +186,17 @@ body.scott {
 				size: $font-size - 1;
 				weight: bold;
 			}
-			margin: 0 5px;
+			margin: 0 7px;
 			min-height: 1px;
 			padding: 2px 10px;
 			position: static;
 			@include text-shadow(0 1px 0 #000);
 			white-space: nowrap;
 			width: auto;
+			
+			&:empty {
+				display: none;
+			}
 		}
 	}
 
@@ -179,7 +207,7 @@ body.scott {
 		font-weight: bold;
 		margin: 0;
 		opacity: 1;
-		height: 28px;
+		height: $header_height;
 		max-width: 200px;
 		padding: 2px 10px;
 		position: absolute;
@@ -244,15 +272,24 @@ body.scott {
 	}
 
 	#tm_webpreview_content {
+		@include box-sizing(border-box);
 		background: none;
-		margin: 1em;
-		padding: 0;
-
+		bottom: 0;
+		height: auto;
+		left: 0;
+		margin: 0;
+		overflow: auto;
+		padding: 25px 15px 15px;
+		position: absolute;
+		right: 0;
+		top: $header_height;
+		width: auto;
+		
 		:first-child {
 			margin-top: auto;
 		}
 	}
-
+	
 	.pro_table {
 		border-bottom: 2px solid #eaeaea;
 		font-size: inherit;
@@ -265,7 +302,7 @@ body.scott {
 
 		th {
 			@include background-image(linear-gradient(top, rgba(255,255,255,0), rgba(150,150,150,.15)));
-			@include background-origin(content-box);
+			@include background-origin(border-box);
 			border-bottom: 1px solid #bbb;
 			@include box-shadow(0 -3px 4px -3px rgba(0,0,0,.2) inset);
 			font-weight: bold;
