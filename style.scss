@@ -42,7 +42,7 @@ body.scott {
 	h1 { font-size: 2em; }
 	h2 { font-size: 1.5em; }
 	h3 { font-size: 1.17em; }
-	h4 {}
+	h4 { font-size: 1em; }
 	h5 { font-size: 0.83em; }
 	h6 { font-size: 0.67em; }
 
@@ -83,7 +83,7 @@ body.scott {
 			left: 0;
 			right: 0;
 		}
-	}	
+	}
 
 	code, pre, tt, textarea {
 		font: {
@@ -102,10 +102,10 @@ body.scott {
 		position: relative;
 		white-space: pre;
 		word-wrap: normal;
-		
+
 		code {
 			white-space: pre;
-			word-wrap: normal;			
+			word-wrap: normal;
 		}
 	}
 
@@ -138,8 +138,7 @@ body.scott {
 		width: auto;
 		z-index: 10000;
 
-		#gradient,
-		#teaser {
+		#gradient, #teaser {
 			display: none;
 		}
 
@@ -172,14 +171,15 @@ body.scott {
 		.type {
 			@include background-image(linear-gradient(top, rgba(89,9,89,.9), rgba(153,15,135,.9)));
 			@include background-origin(border-box);
+			@include border-radius(0 0 3px 3px);
+			@include box-shadow(0 0 1px 0 rgba(0,0,0,.3));
+			@include text-shadow(0 1px 0 #000);
 			border: {
 				bottom: 1px solid rgba(0,0,0,.4);
 				left: 1px solid rgba(0,0,0,.1);
 				right: 1px solid rgba(0,0,0,.1);
 				top: none;
 			}
-			@include border-radius(0 0 3px 3px);
-			@include box-shadow(rgba(0,0,0,.3) 0 0 1px 0);
 			color: #fff;
 			float: left;
 			font: {
@@ -187,13 +187,15 @@ body.scott {
 				weight: bold;
 			}
 			margin: 0 7px;
+			max-width: 92%;
 			min-height: 1px;
+			overflow: hidden;
 			padding: 2px 10px;
 			position: static;
-			@include text-shadow(0 1px 0 #000);
+			text-overflow: ellipsis;
 			white-space: nowrap;
 			width: auto;
-			
+
 			&:empty {
 				display: none;
 			}
@@ -215,55 +217,66 @@ body.scott {
 		text-align: right;
 		top: 0;
 		z-index: 100;
-	}
 
-	#theme_switcher form {
-		padding: 0;
-	}
-
-	#theme_selector {
-		@include appearance(none);
-		background-color: #ddd;
-		@include background-image(
-			url("images/arrow_down.png"),
-			linear-gradient(top, rgba(255,255,255,.7), rgba(201,201,201,.7))
-		);
-		@include background-origin(border-box);
-		background-position: right center;
-		background-repeat: no-repeat, repeat-x;
-		border: 1px solid rgba(100,100,100,.5);
-		@include border-radius(3px);
-		@include box-shadow(
-			1px 0 0 rgba(255,255,255,.15),
-			-1px 0 0 rgba(255,255,255,.15),
-			0 1px 0 rgba(255,255,255,.2)
-		);
-		@include box-sizing(border-box);
-		color: #444;
-		font-weight: bold;
-		max-width: 130px;
-		outline: none;
-		padding: 2px 5px 3px;
-
-		&:hover {
-			background-color: #fff;
+		form {
+			padding: 0;
 		}
 
+		#theme_selector {
+			@include appearance(none);
+			@include background-image(url("images/arrow_down.png"), linear-gradient(top, rgba(255,255,255,.7), rgba(201,201,201,.7)));
+			@include background-origin(border-box);
+			@include border-radius(3px);
+			@include box-shadow(1px 0 0 rgba(255,255,255,.15), -1px 0 0 rgba(255,255,255,.15), 0 1px 0 rgba(255,255,255,.2));
+			@include box-sizing(border-box);
+			background: {
+				color: #ddd;
+				position: right center;
+				repeat: no-repeat, repeat-x;
+			}
+			border: 1px solid rgba(100,100,100,.5);
+			color: #444;
+			font-weight: bold;
+			max-width: 130px;
+			outline: none;
+			padding: 2px 5px 3px;
+
+			&:hover {
+				background-color: #fff;
+			}
+		}
 	}
 
 	#tm_webpreview_footer {
-		background: #292929;
+		@include text-shadow(none);
+		@include background-origin(border-box);
+		@include background-image(
+			linear-gradient(top, rgba(242,242,242,.95), rgba(242,242,242,.95))
+		);
+		@include border-radius(0);
+		@include box-shadow(0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 0 2px 0 rgba(0, 0, 0, 0.4));
+		background-color: transparent;
+		border: 0;
 		bottom: 0;
-		color: #fff;
+		font: {
+			size: $font-size - 1;
+			weight: 500;
+		}
+		color: #222;
 		display: block;
+		height: auto;
 		left: 0;
-		max-height: 50px;
-		overflow: visible;
-		padding: 0;
+		margin: 0 auto;
+		max-height: 30px;
+		overflow: hidden;
+		padding: 3px 6px 4px;
 		position: fixed;
-		@include text-shadow(0 1px 0 rgba(255,255,255,.4));
-		width: 100%;
-		z-index: 100;
+		right: 0;
+		text-overflow: ellipsis;
+		top: auto;
+		white-space: nowrap;
+		width: auto;
+		z-index: 10000;
 
 		p {
 			margin: 0;
@@ -284,12 +297,12 @@ body.scott {
 		right: 0;
 		top: $header_height;
 		width: auto;
-		
+
 		:first-child {
 			margin-top: auto;
 		}
 	}
-	
+
 	.pro_table {
 		border-bottom: 2px solid #eaeaea;
 		font-size: inherit;

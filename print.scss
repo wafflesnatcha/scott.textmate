@@ -3,16 +3,58 @@
 $default: #000;
 $default_bg: #fff;
 
-@import "style.css";
+// @import "style.css";
 
 body.scott {
 	background: $default_bg;
 	color: $default;
-	margin: 0;
-	padding: 0;
+	height: auto;
+	margin: auto;
+	overflow: auto;
+	padding: auto;
 }
 
 .scott {
+	#tm_webpreview_header,
+	#tm_webpreview_header .headline,
+	#tm_webpreview_header .type,
+	#tm_webpreview_content,
+	#tm_webpreview_footer {
+		@include box-shadow(none);
+		@include text-shadow(none);
+		background: transparent none;
+		border: none;
+		color: $default;
+		display: block;
+		float: none;
+		height: auto;
+		margin: auto;
+		max-height: none;
+		max-width: none;
+		min-height: 0;
+		min-width: 0;
+		padding: 0;
+		position: static;
+		white-space: normal;
+	}
+	
+	#theme_switcher {
+		display: none;
+	}
+	
+	#tm_webpreview_footer {
+		margin: 1em 0 0;
+	}
+
+	#tm_webpreview_header .headline,
+	h1 { font-size: 2em; }
+	#tm_webpreview_header .type,
+	h2 { font-size: 1.5em; }
+	h3 { font-size: 1.17em; }
+	h4 { font-size: 1em; }
+	h5 { font-size: 0.83em; }
+	h6 { font-size: 0.67em; }
+	
 	a, a:hover, a:visited {
 		color: #1525ab;
 		text-decoration: underline;
@@ -25,7 +67,7 @@ body.scott {
 		color: $default;
 		padding: 0;
 		position: static;
-		white-space: pre-wrap;
+		white-space: pre-line;
 		word-wrap: break-word;
 	}
 
@@ -36,51 +78,9 @@ body.scott {
 		margin: auto;
 		padding: 0;
 	}
-}
 
-.scott #tm_webpreview_header,
-.scott #tm_webpreview_header .headline,
-.scott #tm_webpreview_header .type {
-	@include box-shadow(none);
-	background: transparent none;
-	border: none;
-	color: $default;
-	display: block;
-	float: none;
-	height: auto;
-	margin: auto;
-	padding: 0;
-	position: static;
-	text-shadow: none;
-	white-space: normal;
-}
-.scott #tm_webpreview_header .type {
-	border: 1px solid #999;
-	@include border-radius(4px);
-	font-size: inherit;
-	margin: .5em 0;
-	padding: .3em;
-}
-.scott #theme_switcher {
-	display: none;
-}
-
-.scott #tm_webpreview_footer {
-	background: none;
-	color: $default;
-	margin: 1em 0 0;
-	padding: 0;
-	position: static;
-	text-shadow: none;
-}
-
-.scott #tm_webpreview_footer p {
-	margin: 0;
-	padding: 0;
-}
-
-.scott #tm_webpreview_content {
-	background: inherit;
-	margin: 0;
-	padding: 0;
+	#{headings()}, p, pre, blockquote {
+		margin-bottom: .6em;
+		margin-top: .6em;
+	}	
 }
