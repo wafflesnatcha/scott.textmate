@@ -305,7 +305,11 @@ body.scott {
 
 	.pro_table {
 		border-bottom: 2px solid #eaeaea;
+		border-collapse: inherit;
+		border-spacing: 0;
 		font-size: inherit;
+		margin: 0;
+		padding: 0;
 
 
 		th, td {
@@ -316,8 +320,8 @@ body.scott {
 		th {
 			@include background-image(linear-gradient(top, rgba(255,255,255,0), rgba(150,150,150,.15)));
 			@include background-origin(border-box);
-			border-bottom: 1px solid #bbb;
 			@include box-shadow(0 -3px 4px -3px rgba(0,0,0,.2) inset);
+			border-bottom: 1px solid #bbb;
 			font-weight: bold;
 			text-align: left;
 		}
