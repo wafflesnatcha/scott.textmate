@@ -6,16 +6,16 @@ $experimental-support-for-opera: false;
 
 @import "compass/css3";
 
-$font_body: "Lucida Grande", "Lucida Sans", Helvetica, sans-serif;
-$font_code: Menlo, Monaco, "Courier New", monospace;
-$font_heading: "Helvetica Neue", Helvetica, sans-serif;
+$font_body: "Lucida Grande", "Lucida Sans", "Helvetica", sans-serif;
+$font_code: "Menlo", "Monaco", "Courier New", monospace;
+$font_heading: "Helvetica Neue", "Helvetica", sans-serif;
 
 $font_size: 12px;
 
 $default: #000;
 $default_bg: #fff;
 
-$header_height: 1.6em;
+$header_height: 2.4em;
 
 body.scott {
 	background: $default_bg;
@@ -58,6 +58,14 @@ body.scott {
 			text-decoration: underline;
 		}
 	}
+	
+	b, strong {
+		font-weight: 700;
+	}
+
+	i, em {
+		font-style: italic;
+	}
 
 	blockquote {
 		color: #444;
@@ -85,7 +93,7 @@ body.scott {
 		}
 	}
 
-	code, pre, tt, textarea {
+	pre, tt, code, kbd, samp, textarea {
 		font: {
 			family: $font_code;
 			size: inherit;
@@ -121,13 +129,15 @@ body.scott {
 		margin: 0;
 	}
 
+	/** Header */
 	#tm_webpreview_header {
 		background: none;
 		border: none;
 		color: $default;
 		display: block;
-		font-size: 18px;
+		font-size: $font_size;
 		height: $header_height;
+		line-height: $header_height;
 		left: -2px;
 		overflow: visible;
 		padding: 0;
@@ -154,11 +164,12 @@ body.scott {
 			@include box-sizing(border-box);
 			font: {
 				family: $font_heading;
+				size: 18px;
 				weight: bold;
 			}
 			margin: 0;
-			height: $header_height;
-			line-height: $header_height;
+			height: auto;
+			line-height: inherit;
 			overflow-x: hidden;
 			padding: 0 200px 0 12px;
 			position: relative;
@@ -185,6 +196,7 @@ body.scott {
 				size: $font-size - 1;
 				weight: bold;
 			}
+			line-height: $header_height * .5;
 			margin: 0 7px;
 			max-width: 92%;
 			min-height: 1px;
@@ -200,6 +212,8 @@ body.scott {
 			}
 		}
 	}
+	
+	/** Theme switcher */
 
 	#theme_switcher {
 		@include box-sizing(border-box);
@@ -208,10 +222,10 @@ body.scott {
 		font-weight: bold;
 		margin: 0;
 		opacity: 1;
-		height: $header_height;
-		line-height: $header_height;
+		// height: $header_height;
+		// line-height: $header_height;
 		max-width: 20em;
-		padding: .2em 1em;
+		padding: 0 1em 0 0;
 		position: absolute;
 		right: 0;
 		text-align: right;
@@ -247,6 +261,8 @@ body.scott {
 		}
 	}
 
+	/** Footer */
+	
 	#tm_webpreview_footer {
 		@include text-shadow(none);
 		@include background-origin(border-box);
@@ -284,6 +300,8 @@ body.scott {
 		}
 	}
 
+	/** Content */
+	
 	#tm_webpreview_content {
 		@include box-sizing(border-box);
 		background: none;
@@ -292,7 +310,7 @@ body.scott {
 		left: 0;
 		margin: 0;
 		overflow: auto;
-		padding: $header_height + 1 1.5em 1.5em;
+		padding: $header_height 1.5em 1.5em;
 		position: absolute;
 		right: 0;
 		top: $header_height;
@@ -302,7 +320,9 @@ body.scott {
 			margin-top: auto;
 		}
 	}
-
+	
+	/** Pro Table */
+	
 	.pro_table {
 		border-bottom: 2px solid #eaeaea;
 		border-collapse: inherit;

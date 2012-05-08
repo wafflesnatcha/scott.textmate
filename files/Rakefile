@@ -1,0 +1,21 @@
+PATH_ROOT = File.expand_path(File.join(File.dirname(__FILE__), '..'))
+PATH_SCSS = File.expand_path(File.join(PATH_ROOT, 'files'))
+
+task :default do
+	exec("rake --rakefile '#{__FILE__}' --tasks")
+end
+
+desc "Compile SCSS for development"
+task :development do
+	system("cd '#{PATH_SCSS}' &>/dev/null && compass compile --time -e development")
+end
+
+desc "Compile SCSS for production"
+task :production do
+	system("cd '#{PATH_SCSS}' &>/dev/null && compass compile --time -e production --force")
+end
+
+desc "Clear Compass cache"
+task :cache do
+	system("find '#{PATH_ROOT}' -type d -name '.sass-cache' -prune -print -exec rm -r \\{\\} \\;")
+end

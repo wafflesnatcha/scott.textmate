@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <title>About Persistent Includes</title>
+  <link rel="stylesheet" href="../../style.css" type="text/css" charset="utf-8" media="screen">
+  <link rel="stylesheet" href="file:///Applications/TextMate.app/Contents/SharedSupport/Support/themes/default/print.css" type="text/css" charset="utf-8" media="print">
+  <link rel="stylesheet" href="../../print.css" type="text/css" charset="utf-8" media="print">
+  </head>
+<body id="tm_webpreview_body" class="scott">
+  <div id="tm_webpreview_header">
+    <img id="gradient" src="../../images/header.png" alt="header">
+    <p class="headline">About Persistent Includes</p>
+    <p class="type">HTML</p>
+    <img id="teaser" src="../../images/teaser.png" alt="teaser">
+    <div id="theme_switcher">
+      <form action="#" onsubmit="return false;">
+        <div>
+          Theme:        
+          <select id="theme_selector">
+            <option value="bright" title="/Applications/TextMate.app/Contents/SharedSupport/Support/themes/bright">Bright</option>
+            <option value="dark" title="/Applications/TextMate.app/Contents/SharedSupport/Support/themes/dark">Dark</option>
+            <option value="halloween" title="/Applications/TextMate.app/Contents/SharedSupport/Support/themes/halloween">Halloween</option>
+            <option value="night" title="/Applications/TextMate.app/Contents/SharedSupport/Support/themes/night">Night</option>
+            <option selected value="scott" title="/Users/scott/Library/Application Support/TextMate/Themes/Webpreview/scott">Scott</option>
+            <option value="shiny" title="/Applications/TextMate.app/Contents/SharedSupport/Support/themes/shiny">Shiny</option>
+          </select>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="tm_webpreview_content" class="scott">
+<p>The &#8220;Add Persistent Include&#8221; command allows you to embed an external file inside your HTML document. This inclusion is handled by TextMate itself. Once you&#8217;ve added the include statement, use the &#8220;Update Document&#8221; command to refresh any included files.</p>
+
+<h2>Including Files</h2>
+
+<p>An inclusion is done using a special HTML comment:</p>
+
+<pre><code>&lt;!-- #tminclude "footer.html" --&gt;
+&lt;!-- end tminclude --&gt;
+</code></pre>
+
+<p>Once you&#8217;ve updated the document, the contents are pulled inside the inclusion markup:</p>
+
+<pre><code>&lt;!-- #tminclude "footer.html" --&gt;
+&lt;div class="footer"&gt;Copyright (c) 2006, WebDesignCorp.&lt;/div&gt;
+&lt;!-- end tminclude --&gt;
+</code></pre>
+
+<p>Note: Included documents are also processed for additional inclusions and placeholders.</p>
+
+<h2>Include Parameters</h2>
+
+<p>You can optionally specify parameters for the included file. Parameters are provided following the filename.</p>
+
+<pre><code>&lt;!-- #tminclude "header.html" #title#="Home Page" --&gt;
+&lt;!-- end tminclude --&gt;
+</code></pre>
+
+<p>With a header.html file that looks like this:</p>
+
+<pre><code>&lt;h1 class="header"&gt;#title#&lt;/h1&gt;
+</code></pre>
+
+<p>Producing:</p>
+
+<pre><code>&lt;!-- #tminclude "header.html" #title#="Home Page" --&gt;
+&lt;h1 class="header"&gt;Home Page&lt;/h1&gt;
+&lt;!-- end tminclude --&gt;
+</code></pre>
+
+<h2>Placeholders</h2>
+
+<p>The update command also processes document &#8220;placeholders&#8221;. Placeholders are written in this format:</p>
+
+<pre><code>#variable#
+</code></pre>
+
+<p>The following placeholders are available:</p>
+
+<table class="pro_table" border="0" width="100%" cellpadding="5" cellspacing="0">
+<tr><th>Placeholder</th><th>Example Result</th></tr>
+<tr><td><tt>#abbrevdate#    </tt></td><td>Abbreviated date: Sun, Aug 15, 2006</td></tr>
+<tr><td><tt>#basename#      </tt></td><td>Filename without extension.</td></tr>
+<tr><td><tt>#compdate#      </tt></td><td>Compact date: 15-Aug-06</td></tr>
+<tr><td><tt>#creationdate#  </tt></td><td>Creation date: 15-Aug-06</td></tr>
+<tr><td><tt>#creationtime#  </tt></td><td>Creation time:  1:20 PM</td></tr>
+<tr><td><tt>#docsize#       </tt></td><td>Resulting document length in bytes</td></tr>
+<tr><td><tt>#dont_update#   </tt></td><td>Special: presence will prevent document updating</td></tr>
+<tr><td><tt>#filename#      </tt></td><td>Document filename</td></tr>
+<tr><td><tt>#file_extension#</tt></td><td>Document file extension</td></tr>
+<tr><td><tt>#generator#     </tt></td><td>TextMate</td></tr>
+<tr><td><tt>#gmtime#        </tt></td><td>GMT time</td></tr>
+<tr><td><tt>#localpath#     </tt></td><td>Full path to current file</td></tr>
+<tr><td><tt>#localtime#     </tt></td><td>Local computer time</td></tr>
+<tr><td><tt>#longdate#      </tt></td><td>Long Date: Tuesday, August 15, 2006</td></tr>
+<tr><td><tt>#modifieddate#  </tt></td><td>Modified date: 15-Aug-06</td></tr>
+<tr><td><tt>#modifiedtime#  </tt></td><td>Modified time:  1:20 PM</td></tr>
+<tr><td><tt>#monthdaynum#   </tt></td><td>Day of Month: 15</td></tr>
+<tr><td><tt>#monthnum#      </tt></td><td>Month Number: 08</td></tr>
+<tr><td><tt>#shortdate#     </tt></td><td>Short Date: 08/15/06</td></tr>
+<tr><td><tt>#shortusername# </tt></td><td>Login name of current user</td></tr>
+<tr><td><tt>#username#      </tt></td><td>Name of current user</td></tr>
+<tr><td><tt>#yearnum#       </tt></td><td>Current Year: 2006</td></tr>
+</table>
+
+<p>In addition to these, all of the TextMate environment variables (those starting with a &#8220;TM_&#8221; prefix) are available as placeholders. For example:</p>
+
+<pre><code>#organization_name#
+</code></pre>
+
+<p>Will populate using the <code>TM_ORGANIZATION_NAME</code> environment variable.</p>
+
+<h2>Formatting Time</h2>
+
+<p>The date-based placeholders may also specify a format that can be used to customize the date output. For example:</p>
+
+<pre><code>#gmtime %b %e, %Y# (Aug 15, 2006)
+</code></pre>
+
+<h2>Placeholder Example</h2>
+
+<p>If you want to make that footer.html include more useful, you can use placeholders. For example:</p>
+
+<pre><code>&lt;div class="footer"&gt;Copyright (c) #yearnum#, #oragnization_name#.&lt;/div&gt;
+</code></pre>
+
+<p>This would then produce the following, when included and processed:</p>
+
+<pre><code>&lt;!-- #tminclude "footer.html" --&gt;
+&lt;div class="footer"&gt;Copyright (c) 2006, WebDesignCorp.&lt;/div&gt;
+&lt;!-- end tminclude --&gt;
+</code></pre>
+
+<h2>Scripted Includes</h2>
+
+<p>It is also possible to produce included content using scripts. If the included file is a script, it is run and the output is placed inside the include block.</p>
+
+<pre><code>&lt;!-- #tminclude "scripts/header.pl" #class#="huge" --&gt;
+&lt;!-- end tminclude --&gt;
+</code></pre>
+
+<p>.pl (Perl), .py (Python) and .rb (Ruby) scripts are currently recognized. For the above example, the &#8220;header.pl&#8221; script is run with the following parameters:</p>
+
+<pre><code>header.pl (source_filename) class huge
+</code></pre>
+
+<p>The Perl script in this case can process the parameters like this.</p>
+
+<pre><code>#!/usr/bin/perl
+my ($filename, %args) = @ARGV;
+print "&lt;h1 class='$args{class}'&gt;Header for $filename&lt;/h1&gt;"
+</code></pre>
+
+<p>That would end up producing this:</p>
+
+<pre><code>&lt;!-- #tminclude "scripts/header.pl" #class#="huge" --&gt;
+&lt;h1 class='huge'&gt;Header for /path/to/example.html&lt;/h1&gt;
+&lt;!-- end tminclude --&gt;
+</code></pre>
+	</div>
+</body>
+</html>

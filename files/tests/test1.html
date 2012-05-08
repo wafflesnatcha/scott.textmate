@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <title>About Persistent Includes</title>
+  <link rel="stylesheet" href="../../style.css" type="text/css" charset="utf-8" media="screen">
+  <link rel="stylesheet" href="file:///Applications/TextMate.app/Contents/SharedSupport/Support/themes/default/print.css" type="text/css" charset="utf-8" media="print">
+  <link rel="stylesheet" href="../../print.css" type="text/css" charset="utf-8" media="print">
+  </head>
+<body id="tm_webpreview_body" class="scott">
+  <div id="tm_webpreview_header">
+    <img id="gradient" src="../../images/header.png" alt="header">
+    <p class="headline">Documentation for ‘IO#puts’</p>
+    <p class="type">RDoc</p>
+    <img id="teaser" src="../../images/teaser.png" alt="teaser">
+    <div id="theme_switcher">
+      <form action="#" onsubmit="return false;">
+        <div>
+          Theme:        
+          <select id="theme_selector">
+            <option value="bright" title="/Applications/TextMate.app/Contents/SharedSupport/Support/themes/bright">Bright</option>
+            <option value="dark" title="/Applications/TextMate.app/Contents/SharedSupport/Support/themes/dark">Dark</option>
+            <option value="halloween" title="/Applications/TextMate.app/Contents/SharedSupport/Support/themes/halloween">Halloween</option>
+            <option value="night" title="/Applications/TextMate.app/Contents/SharedSupport/Support/themes/night">Night</option>
+            <option selected value="scott" title="/Users/scott/Library/Application Support/TextMate/Themes/Webpreview/scott">Scott</option>
+            <option value="shiny" title="/Applications/TextMate.app/Contents/SharedSupport/Support/themes/shiny">Shiny</option>
+          </select>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="tm_webpreview_content" class="scott">
+<select id="search_history" style="float: right;">
+  <option value="IO#puts" selected="selected">IO#puts</option>
+<option value="IO">IO</option></select>
+<div id="actual_output" style="margin-top: 3em"><h2>Class: <a href="#">IO</a></h2>
+<pre>     Class +IO+ is the basis for all input and output in Ruby. An I/O
+     stream may be _duplexed_ (that is, bidirectional), and so may use
+     more than one native operating system stream.
+
+     Many of the examples in this section use class +File+, the only
+     standard subclass of +IO+. The two classes are closely associated.
+
+     As used in this section, _portname_ may take any of the following
+     forms.
+
+     *   A plain string represents a filename suitable for the
+         underlying operating system.
+
+     *   A string starting with ``+|+'' indicates a subprocess. The
+         remainder of the string following the ``+|+'' is invoked as a
+         process with appropriate input/output channels connected to it.
+
+     *   A string equal to ``+|-+'' will create another Ruby instance as
+         a subprocess.
+
+     Ruby will convert pathnames between different operating system
+     conventions if possible. For instance, on a Windows system the
+     filename ``+/gumby/ruby/test.rb+'' will be opened as
+     ``+\gumby\ruby\test.rb+''. When specifying a Windows-style filename
+     in a Ruby string, remember to escape the backslashes:
+
+        "c:\gumby\ruby\test.rb"
+
+     Our examples here will use the Unix-style forward slashes;
+     +File::SEPARATOR+ can be used to get the platform-specific
+     separator character.
+
+     I/O ports may be opened in any one of several different modes,
+     which are shown in this section as _mode_. The mode may either be a
+     Fixnum or a String. If numeric, it should be one of the operating
+     system specific constants (O_RDONLY, O_WRONLY, O_RDWR, O_APPEND and
+     so on). See man open(2) for more information.
+
+     If the mode is given as a String, it must be one of the values
+     listed in the following table.
+
+       Mode |  Meaning
+       -----+--------------------------------------------------------
+       "r"  |  Read-only, starts at beginning of file  (default mode).
+       -----+--------------------------------------------------------
+       "r+" |  Read-write, starts at beginning of file.
+       -----+--------------------------------------------------------
+       "w"  |  Write-only, truncates existing file
+            |  to zero length or creates a new file for writing.
+       -----+--------------------------------------------------------
+       "w+" |  Read-write, truncates existing file to zero length
+            |  or creates a new file for reading and writing.
+       -----+--------------------------------------------------------
+       "a"  |  Write-only, starts at end of file if file exists,
+            |  otherwise creates a new file for writing.
+       -----+--------------------------------------------------------
+       "a+" |  Read-write, starts at end of file if file exists,
+            |  otherwise creates a new file for reading and
+            |  writing.
+       -----+--------------------------------------------------------
+        "b" |  (DOS/Windows only) Binary file mode (may appear with
+            |  any of the key letters listed above).
+
+     The global constant ARGF (also accessible as $&lt;) provides an
+     IO-like stream which allows access to all files mentioned on the
+     command line (or STDIN if no files are mentioned). ARGF provides
+     the methods +#path+ and +#filename+ to access the name of the file
+     currently being read.</pre>
+
+<h2>Includes</h2>
+<pre>     <a href="#">Enumerable</a>(<a href="#">all?</a>, <a href="#">any?</a>, <a href="#">as_json</a>, <a href="#">collect</a>, <a href="#">count</a>, <a href="#">cycle</a>, <a href="#">detect</a>,
+     <a href="#">drop</a>, <a href="#">drop_while</a>, <a href="#">each_cons</a>, <a href="#">each_slice</a>, <a href="#">each_with_index</a>,
+     <a href="#">each_with_object</a>, <a href="#">entries</a>, <a href="#">enum_cons</a>, <a href="#">enum_slice</a>, <a href="#">enum_with_index</a>,
+     <a href="#">exclude?</a>, <a href="#">find</a>, <a href="#">find_all</a>, <a href="#">find_index</a>, <a href="#">first</a>, <a href="#">grep</a>, <a href="#">group_by</a>,
+     <a href="#">include?</a>, <a href="#">index_by</a>, <a href="#">inject</a>, <a href="#">many?</a>, <a href="#">map</a>, <a href="#">max</a>, <a href="#">max_by</a>, <a href="#">member?</a>, <a href="#">min</a>,
+     <a href="#">min_by</a>, <a href="#">minmax</a>, <a href="#">minmax_by</a>, <a href="#">none?</a>, <a href="#">one?</a>, <a href="#">partition</a>, <a href="#">reduce</a>, <a href="#">reject</a>,
+     <a href="#">reverse_each</a>, <a href="#">select</a>, <a href="#">sort</a>, <a href="#">sort_by</a>, <a href="#">sum</a>, <a href="#">take</a>, <a href="#">take_while</a>, <a href="#">to_a</a>,
+     <a href="#">to_set</a>, <a href="#">zip</a>), File::<a href="#">Constants</a>()</pre>
+
+<h2>Constants</h2>
+<pre>     SEEK_CUR: INT2FIX(SEEK_CUR)
+     SEEK_END: INT2FIX(SEEK_END)
+     SEEK_SET: INT2FIX(SEEK_SET)</pre>
+
+<h2>Class methods</h2>
+<pre>     <a href="#">for_fd</a>, <a href="#">foreach</a>, <a href="#">new</a>, <a href="#">open</a>, <a href="#">pipe</a>, <a href="#">popen</a>, <a href="#">read</a>, <a href="#">readlines</a>, <a href="#">select</a>,
+     <a href="#">sysopen</a></pre>
+
+<h2>Instance methods</h2>
+<pre>     <a href="#">&lt;&lt;</a>, <a href="#">binmode</a>, <a href="#">block_scanf</a>, <a href="#">bytes</a>, <a href="#">chars</a>, <a href="#">close</a>, <a href="#">close_read</a>,
+     <a href="#">close_write</a>, <a href="#">closed?</a>, <a href="#">each</a>, <a href="#">each_byte</a>, <a href="#">each_char</a>, <a href="#">each_line</a>, <a href="#">eof</a>,
+     <a href="#">eof?</a>, <a href="#">fcntl</a>, <a href="#">fileno</a>, <a href="#">flush</a>, <a href="#">fsync</a>, <a href="#">getbyte</a>, <a href="#">getc</a>, <a href="#">gets</a>, <a href="#">inspect</a>,
+     <a href="#">ioctl</a>, <a href="#">isatty</a>, <a href="#">lineno</a>, <a href="#">lineno=</a>, <a href="#">lines</a>, <a href="#">pid</a>, <a href="#">pos</a>, <a href="#">pos=</a>, <a href="#">print</a>,
+     <a href="#">printf</a>, <a href="#">putc</a>, <a href="#">puts</a>, <a href="#">read</a>, <a href="#">read_nonblock</a>, <a href="#">readbyte</a>, <a href="#">readbytes</a>,
+     <a href="#">readchar</a>, <a href="#">readline</a>, <a href="#">readlines</a>, <a href="#">readpartial</a>, <a href="#">reopen</a>, <a href="#">rewind</a>, <a href="#">scanf</a>,
+     <a href="#">seek</a>, <a href="#">soak_up_spaces</a>, <a href="#">stat</a>, <a href="#">sync</a>, <a href="#">sync=</a>, <a href="#">sysread</a>, <a href="#">sysseek</a>,
+     <a href="#">syswrite</a>, <a href="#">tell</a>, <a href="#">to_i</a>, <a href="#">to_io</a>, <a href="#">tty?</a>, <a href="#">ungetc</a>, <a href="#">write</a>, <a href="#">write_nonblock</a></pre>
+</div>
+  </div>
+
+
+</body>
+</html>
