@@ -1,12 +1,10 @@
 @import "compass/css3";
 
 $default: #000;
-$default_bg: #fff;
-
-// @import "style.css";
+$default__bg: #fff;
 
 body.scott {
-	background: $default_bg;
+	background: $default__bg;
 	color: $default;
 	height: auto;
 	margin: auto;
@@ -46,14 +44,29 @@ body.scott {
 		margin: 1em 0 0;
 	}
 
-	#tm_webpreview_header .headline,
-	h1 { font-size: 2em; }
-	#tm_webpreview_header .type,
-	h2 { font-size: 1.5em; }
-	h3 { font-size: 1.17em; }
-	h4 { font-size: 1em; }
-	h5 { font-size: 0.83em; }
-	h6 { font-size: 0.67em; }
+	#tm_webpreview_header .headline, h1 {
+		font-size: 2em;
+	}
+
+	#tm_webpreview_header .type, h2 {
+		font-size: 1.5em;
+	}
+
+	h3 {
+		font-size: 1.17em;
+	}
+
+	h4 {
+		font-size: 1em;
+	}
+
+	h5 {
+		font-size: 0.83em;
+	}
+
+	h6 {
+		font-size: 0.67em;
+	}
 	
 	a, a:hover, a:visited {
 		color: #1525ab;

@@ -13,12 +13,12 @@ $font_heading: "Helvetica Neue", "Helvetica", sans-serif;
 $font_size: 12px;
 
 $default: #000;
-$default_bg: #fff;
+$default__bg: #fff;
 
 $header_height: 2.4em;
 
 body.scott {
-	background: $default_bg;
+	background: $default__bg;
 	color: $default;
 	font: {
 		family: $font_body;
@@ -333,7 +333,7 @@ body.scott {
 
 
 		th, td {
-			background-color: $default_bg;
+			background-color: $default__bg;
 			padding: 4px 8px;
 		}
 
