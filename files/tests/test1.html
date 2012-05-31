@@ -3,15 +3,20 @@
 <html>
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-  <title>About Persistent Includes</title>
+  <title>Documentation for ‘IO’</title>
+  <link rel="stylesheet" href="file:///Applications/TextMate.app/Contents/SharedSupport/Support/themes/default/style.css" type="text/css" charset="utf-8" media="screen">
   <link rel="stylesheet" href="../../style.css" type="text/css" charset="utf-8" media="screen">
   <link rel="stylesheet" href="file:///Applications/TextMate.app/Contents/SharedSupport/Support/themes/default/print.css" type="text/css" charset="utf-8" media="print">
   <link rel="stylesheet" href="../../print.css" type="text/css" charset="utf-8" media="print">
-  </head>
+  <script src="file:///Applications/TextMate.app/Contents/SharedSupport/Support/script/default.js" type="text/javascript" charset="utf-8"></script>
+  <script src="file:///Applications/TextMate.app/Contents/SharedSupport/Support/script/webpreview.js" type="text/javascript" charset="utf-8"></script>
+  <script src="file:///Applications/TextMate.app/Contents/SharedSupport/Support/script/sortable.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">function ri (arg, _history) { return; }</script>
+</head>
 <body id="tm_webpreview_body" class="scott">
   <div id="tm_webpreview_header">
     <img id="gradient" src="../../images/header.png" alt="header">
-    <p class="headline">Documentation for ‘IO#puts’</p>
+    <p class="headline">Documentation for ‘IO’</p>
     <p class="type">RDoc</p>
     <img id="teaser" src="../../images/teaser.png" alt="teaser">
     <div id="theme_switcher">
@@ -19,22 +24,30 @@
         <div>
           Theme:        
           <select id="theme_selector">
-            <option value="bright" title="/Applications/TextMate.app/Contents/SharedSupport/Support/themes/bright">Bright</option>
-            <option value="dark" title="/Applications/TextMate.app/Contents/SharedSupport/Support/themes/dark">Dark</option>
-            <option value="halloween" title="/Applications/TextMate.app/Contents/SharedSupport/Support/themes/halloween">Halloween</option>
-            <option value="night" title="/Applications/TextMate.app/Contents/SharedSupport/Support/themes/night">Night</option>
-            <option selected value="scott" title="/Users/scott/Library/Application Support/TextMate/Themes/Webpreview/scott">Scott</option>
-            <option value="shiny" title="/Applications/TextMate.app/Contents/SharedSupport/Support/themes/shiny">Shiny</option>
+            <option value="bright">Bright</option>
+            <option value="dark">Dark</option>
+            <option value="halloween">Halloween</option>
+            <option value="night">Night</option>
+            <option selected value="scott">Scott</option>
+            <option value="shiny">Shiny</option>
           </select>
         </div>
+        <script type="text/javascript" charset="utf-8">
+          document.getElementById('theme_selector').value = 'scott';
+        </script>
       </form>
     </div>
   </div>
   <div id="tm_webpreview_content" class="scott">
 <select id="search_history" style="float: right;">
-  <option value="IO#puts" selected="selected">IO#puts</option>
-<option value="IO">IO</option></select>
-<div id="actual_output" style="margin-top: 3em"><h2>Class: <a href="#">IO</a></h2>
+  <option value="IO" selected="selected">IO</option>
+<option value="Enumerable#collect">Enumerable#collect</option><option value="Enumerable">Enumerable</option><option value="IO#syswrite">IO#syswrite</option><option value="IO">IO</option></select>
+<script type="text/javascript" charset="utf-8">
+  // document.getElementById('search_history').addEventListener('change', function(e) {
+  //   ri(document.getElementById('search_history').value, true);
+  // }, false);
+</script>
+<div id="actual_output" style="margin-top: 3em"><h2>Class: <a href="javascript:ri('IO')">IO</a></h2>
 <pre>     Class +IO+ is the basis for all input and output in Ruby. An I/O
      stream may be _duplexed_ (that is, bidirectional), and so may use
      more than one native operating system stream.
@@ -105,14 +118,13 @@
      currently being read.</pre>
 
 <h2>Includes</h2>
-<pre>     <a href="#">Enumerable</a>(<a href="#">all?</a>, <a href="#">any?</a>, <a href="#">as_json</a>, <a href="#">collect</a>, <a href="#">count</a>, <a href="#">cycle</a>, <a href="#">detect</a>,
-     <a href="#">drop</a>, <a href="#">drop_while</a>, <a href="#">each_cons</a>, <a href="#">each_slice</a>, <a href="#">each_with_index</a>,
-     <a href="#">each_with_object</a>, <a href="#">entries</a>, <a href="#">enum_cons</a>, <a href="#">enum_slice</a>, <a href="#">enum_with_index</a>,
-     <a href="#">exclude?</a>, <a href="#">find</a>, <a href="#">find_all</a>, <a href="#">find_index</a>, <a href="#">first</a>, <a href="#">grep</a>, <a href="#">group_by</a>,
-     <a href="#">include?</a>, <a href="#">index_by</a>, <a href="#">inject</a>, <a href="#">many?</a>, <a href="#">map</a>, <a href="#">max</a>, <a href="#">max_by</a>, <a href="#">member?</a>, <a href="#">min</a>,
-     <a href="#">min_by</a>, <a href="#">minmax</a>, <a href="#">minmax_by</a>, <a href="#">none?</a>, <a href="#">one?</a>, <a href="#">partition</a>, <a href="#">reduce</a>, <a href="#">reject</a>,
-     <a href="#">reverse_each</a>, <a href="#">select</a>, <a href="#">sort</a>, <a href="#">sort_by</a>, <a href="#">sum</a>, <a href="#">take</a>, <a href="#">take_while</a>, <a href="#">to_a</a>,
-     <a href="#">to_set</a>, <a href="#">zip</a>), File::<a href="#">Constants</a>()</pre>
+<pre>     <a href="javascript:ri('Enumerable')">Enumerable</a>(<a href="javascript:ri('Enumerable#all?')">all?</a>, <a href="javascript:ri('Enumerable#any?')">any?</a>, <a href="javascript:ri('Enumerable#collect')">collect</a>, <a href="javascript:ri('Enumerable#count')">count</a>, <a href="javascript:ri('Enumerable#cycle')">cycle</a>, <a href="javascript:ri('Enumerable#detect')">detect</a>, <a href="javascript:ri('Enumerable#drop')">drop</a>,
+     <a href="javascript:ri('Enumerable#drop_while')">drop_while</a>, <a href="javascript:ri('Enumerable#each_cons')">each_cons</a>, <a href="javascript:ri('Enumerable#each_slice')">each_slice</a>, <a href="javascript:ri('Enumerable#each_with_index')">each_with_index</a>, <a href="javascript:ri('Enumerable#entries')">entries</a>,
+     <a href="javascript:ri('Enumerable#enum_cons')">enum_cons</a>, <a href="javascript:ri('Enumerable#enum_slice')">enum_slice</a>, <a href="javascript:ri('Enumerable#enum_with_index')">enum_with_index</a>, <a href="javascript:ri('Enumerable#find')">find</a>, <a href="javascript:ri('Enumerable#find_all')">find_all</a>, <a href="javascript:ri('Enumerable#find_index')">find_index</a>,
+     <a href="javascript:ri('Enumerable#first')">first</a>, <a href="javascript:ri('Enumerable#grep')">grep</a>, <a href="javascript:ri('Enumerable#group_by')">group_by</a>, <a href="javascript:ri('Enumerable#include?')">include?</a>, <a href="javascript:ri('Enumerable#inject')">inject</a>, <a href="javascript:ri('Enumerable#inject')">inject</a>, <a href="javascript:ri('Enumerable#map')">map</a>, <a href="javascript:ri('Enumerable#max')">max</a>, <a href="javascript:ri('Enumerable#max_by')">max_by</a>,
+     <a href="javascript:ri('Enumerable#member?')">member?</a>, <a href="javascript:ri('Enumerable#min')">min</a>, <a href="javascript:ri('Enumerable#min_by')">min_by</a>, <a href="javascript:ri('Enumerable#minmax')">minmax</a>, <a href="javascript:ri('Enumerable#minmax_by')">minmax_by</a>, <a href="javascript:ri('Enumerable#none?')">none?</a>, <a href="javascript:ri('Enumerable#one?')">one?</a>, <a href="javascript:ri('Enumerable#partition')">partition</a>,
+     <a href="javascript:ri('Enumerable#reduce')">reduce</a>, <a href="javascript:ri('Enumerable#reject')">reject</a>, <a href="javascript:ri('Enumerable#reverse_each')">reverse_each</a>, <a href="javascript:ri('Enumerable#select')">select</a>, <a href="javascript:ri('Enumerable#sort')">sort</a>, <a href="javascript:ri('Enumerable#sort_by')">sort_by</a>, <a href="javascript:ri('Enumerable#take')">take</a>,
+     <a href="javascript:ri('Enumerable#take_while')">take_while</a>, <a href="javascript:ri('Enumerable#to_a')">to_a</a>, <a href="javascript:ri('Enumerable#to_set')">to_set</a>, <a href="javascript:ri('Enumerable#zip')">zip</a>), File::<a href="javascript:ri('Constants')">Constants</a>()</pre>
 
 <h2>Constants</h2>
 <pre>     SEEK_CUR: INT2FIX(SEEK_CUR)
@@ -120,21 +132,20 @@
      SEEK_SET: INT2FIX(SEEK_SET)</pre>
 
 <h2>Class methods</h2>
-<pre>     <a href="#">for_fd</a>, <a href="#">foreach</a>, <a href="#">new</a>, <a href="#">open</a>, <a href="#">pipe</a>, <a href="#">popen</a>, <a href="#">read</a>, <a href="#">readlines</a>, <a href="#">select</a>,
-     <a href="#">sysopen</a></pre>
+<pre>     <a href="javascript:ri('IO::for_fd')">for_fd</a>, <a href="javascript:ri('IO::foreach')">foreach</a>, <a href="javascript:ri('IO::new')">new</a>, <a href="javascript:ri('IO::open')">open</a>, <a href="javascript:ri('IO::pipe')">pipe</a>, <a href="javascript:ri('IO::popen')">popen</a>, <a href="javascript:ri('IO::read')">read</a>, <a href="javascript:ri('IO::readlines')">readlines</a>, <a href="javascript:ri('IO::select')">select</a>,
+     <a href="javascript:ri('IO::sysopen')">sysopen</a></pre>
 
 <h2>Instance methods</h2>
-<pre>     <a href="#">&lt;&lt;</a>, <a href="#">binmode</a>, <a href="#">block_scanf</a>, <a href="#">bytes</a>, <a href="#">chars</a>, <a href="#">close</a>, <a href="#">close_read</a>,
-     <a href="#">close_write</a>, <a href="#">closed?</a>, <a href="#">each</a>, <a href="#">each_byte</a>, <a href="#">each_char</a>, <a href="#">each_line</a>, <a href="#">eof</a>,
-     <a href="#">eof?</a>, <a href="#">fcntl</a>, <a href="#">fileno</a>, <a href="#">flush</a>, <a href="#">fsync</a>, <a href="#">getbyte</a>, <a href="#">getc</a>, <a href="#">gets</a>, <a href="#">inspect</a>,
-     <a href="#">ioctl</a>, <a href="#">isatty</a>, <a href="#">lineno</a>, <a href="#">lineno=</a>, <a href="#">lines</a>, <a href="#">pid</a>, <a href="#">pos</a>, <a href="#">pos=</a>, <a href="#">print</a>,
-     <a href="#">printf</a>, <a href="#">putc</a>, <a href="#">puts</a>, <a href="#">read</a>, <a href="#">read_nonblock</a>, <a href="#">readbyte</a>, <a href="#">readbytes</a>,
-     <a href="#">readchar</a>, <a href="#">readline</a>, <a href="#">readlines</a>, <a href="#">readpartial</a>, <a href="#">reopen</a>, <a href="#">rewind</a>, <a href="#">scanf</a>,
-     <a href="#">seek</a>, <a href="#">soak_up_spaces</a>, <a href="#">stat</a>, <a href="#">sync</a>, <a href="#">sync=</a>, <a href="#">sysread</a>, <a href="#">sysseek</a>,
-     <a href="#">syswrite</a>, <a href="#">tell</a>, <a href="#">to_i</a>, <a href="#">to_io</a>, <a href="#">tty?</a>, <a href="#">ungetc</a>, <a href="#">write</a>, <a href="#">write_nonblock</a></pre>
+<pre>     <a href="javascript:ri('IO#<<')">&lt;&lt;</a>, <a href="javascript:ri('IO#binmode')">binmode</a>, <a href="javascript:ri('IO#block_scanf')">block_scanf</a>, <a href="javascript:ri('IO#bytes')">bytes</a>, <a href="javascript:ri('IO#chars')">chars</a>, <a href="javascript:ri('IO#close')">close</a>, <a href="javascript:ri('IO#close_read')">close_read</a>,
+     <a href="javascript:ri('IO#close_write')">close_write</a>, <a href="javascript:ri('IO#closed?')">closed?</a>, <a href="javascript:ri('IO#each')">each</a>, <a href="javascript:ri('IO#each_byte')">each_byte</a>, <a href="javascript:ri('IO#each_char')">each_char</a>, <a href="javascript:ri('IO#each_line')">each_line</a>, <a href="javascript:ri('IO#eof')">eof</a>,
+     <a href="javascript:ri('IO#eof?')">eof?</a>, <a href="javascript:ri('IO#fcntl')">fcntl</a>, <a href="javascript:ri('IO#fileno')">fileno</a>, <a href="javascript:ri('IO#flush')">flush</a>, <a href="javascript:ri('IO#fsync')">fsync</a>, <a href="javascript:ri('IO#getbyte')">getbyte</a>, <a href="javascript:ri('IO#getc')">getc</a>, <a href="javascript:ri('IO#gets')">gets</a>, <a href="javascript:ri('IO#inspect')">inspect</a>,
+     <a href="javascript:ri('IO#ioctl')">ioctl</a>, <a href="javascript:ri('IO#isatty')">isatty</a>, <a href="javascript:ri('IO#lineno')">lineno</a>, <a href="javascript:ri('IO#lineno=')">lineno=</a>, <a href="javascript:ri('IO#lines')">lines</a>, <a href="javascript:ri('IO#pid')">pid</a>, <a href="javascript:ri('IO#pos')">pos</a>, <a href="javascript:ri('IO#pos=')">pos=</a>,
+     <a href="javascript:ri('IO#posix_fileno')">posix_fileno</a>, <a href="javascript:ri('IO#print')">print</a>, <a href="javascript:ri('IO#printf')">printf</a>, <a href="javascript:ri('IO#putc')">putc</a>, <a href="javascript:ri('IO#puts')">puts</a>, <a href="javascript:ri('IO#read')">read</a>, <a href="javascript:ri('IO#read_nonblock')">read_nonblock</a>,
+     <a href="javascript:ri('IO#readbyte')">readbyte</a>, <a href="javascript:ri('IO#readbytes')">readbytes</a>, <a href="javascript:ri('IO#readchar')">readchar</a>, <a href="javascript:ri('IO#readline')">readline</a>, <a href="javascript:ri('IO#readlines')">readlines</a>, <a href="javascript:ri('IO#readpartial')">readpartial</a>,
+     <a href="javascript:ri('IO#reopen')">reopen</a>, <a href="javascript:ri('IO#rewind')">rewind</a>, <a href="javascript:ri('IO#scanf')">scanf</a>, <a href="javascript:ri('IO#seek')">seek</a>, <a href="javascript:ri('IO#soak_up_spaces')">soak_up_spaces</a>, <a href="javascript:ri('IO#stat')">stat</a>, <a href="javascript:ri('IO#sync')">sync</a>, <a href="javascript:ri('IO#sync=')">sync=</a>,
+     <a href="javascript:ri('IO#sysread')">sysread</a>, <a href="javascript:ri('IO#sysseek')">sysseek</a>, <a href="javascript:ri('IO#syswrite')">syswrite</a>, <a href="javascript:ri('IO#tell')">tell</a>, <a href="javascript:ri('IO#to_i')">to_i</a>, <a href="javascript:ri('IO#to_io')">to_io</a>, <a href="javascript:ri('IO#tty?')">tty?</a>, <a href="javascript:ri('IO#ungetc')">ungetc</a>, <a href="javascript:ri('IO#write')">write</a>,
+     <a href="javascript:ri('IO#write_nonblock')">write_nonblock</a></pre>
 </div>
   </div>
-
-
 </body>
 </html>

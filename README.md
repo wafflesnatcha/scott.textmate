@@ -28,8 +28,7 @@ Or, just [download the .zip][.zip] and extract it into `~/Library/Application Su
 [.zip]: https://github.com/downloads/wafflesnatcha/scott.textmate/scott.zip
 [.tar.gz]: https://github.com/downloads/wafflesnatcha/scott.textmate/scott.tar.gz
 
-[screen1small]: http://github.com/wafflesnatcha/scott.textmate/raw/master/files/screens/1small.png
-[screen2small]: http://github.com/wafflesnatcha/scott.textmate/raw/master/files/screens/2small.png
-
-[screen1]: http://github.com/wafflesnatcha/scott.textmate/raw/master/files/screens/1.png
-[screen2]: http://github.com/wafflesnatcha/scott.textmate/raw/master/files/screens/2.png
+[screen1small]: https://github.com/wafflesnatcha/scott.textmate/raw/master/files/screens/1small.png
+[screen2small]: https://github.com/wafflesnatcha/scott.textmate/raw/master/files/screens/2small.png
+[screen1]: https://github.com/wafflesnatcha/scott.textmate/raw/master/files/screens/1.png
+[screen2]: https://github.com/wafflesnatcha/scott.textmate/raw/master/files/screens/2.png
