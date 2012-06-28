@@ -14,9 +14,9 @@ Or, just [download the .zip][.zip] and extract it into `~/Library/Application Su
 
 ## Downloads
 
-[scott.zip][.zip] (7KB) 13 Apr 2012
+[scott.zip][.zip] (7KB) April 13, 2012
 
-[scott.tar.gz][.tar.gz] (8KB) 13 Apr 2012
+[scott.tar.gz][.tar.gz] (8KB) April 13, 2012
 
 ## Screens
 

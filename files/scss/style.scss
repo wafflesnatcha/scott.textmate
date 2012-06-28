@@ -1,4 +1,5 @@
 @import "compass/support";
+
 $legacy-support-for-ie: false;
 $experimental-support-for-mozilla: false;
 $experimental-support-for-microsoft: false;
@@ -12,28 +13,35 @@ $font_heading: "Helvetica Neue", "Helvetica", sans-serif;
 
 $font_size: 12px;
 
-$default: #000;
-$default__bg: #fff;
+$body: #000;
+$body__bg: #fff;
+
+$blockquote: #444;
+
+$heading: $body;
+
+$link: #1525ab;
+$link_visited: #680094;
 
 $header_height: 2.4em;
 
 body.scott {
-	background: $default__bg;
-	color: $default;
+	-webkit-user-select: none;
+	background: $body__bg;
+	color: $body;
 	font: {
 		family: $font_body;
 		size: $font_size;
 	}
-	height: 100%;
 	margin: 0;
-	overflow: hidden;
 	padding: 0;
 }
 
 .scott {
-	#{headings()} {
-		color: $default;
+	h1, h2, h3, h4, h5, h6 {
+		color: $heading;
 		font: {
+			family: $font_heading;
 			style: normal;
 			weight: 500;
 		}
@@ -47,18 +55,18 @@ body.scott {
 	h6 { font-size: 0.67em; }
 
 	a {
-		color: #1525ab;
+		color: $link;
 		text-decoration: none;
 
 		&:visited {
-			color: #680094;
+			color: $link_visited;
 		}
 
 		&:hover, &:active, &:focus {
 			text-decoration: underline;
 		}
 	}
-	
+
 	b, strong {
 		font-weight: 700;
 	}
@@ -68,7 +76,7 @@ body.scott {
 	}
 
 	blockquote {
-		color: #444;
+		color: $blockquote;
 		font-style: italic;
 		margin: {
 			left: 40px;
@@ -76,14 +84,12 @@ body.scott {
 		}
 	}
 
-	#{headings()}, p, pre, blockquote {
-		-webkit-margin-after: 15px;
-		-webkit-margin-before: 15px;
+	h1, h2, h3, h4, h5, h6, p, pre, blockquote {
+		margin: {
+			top: 15px;
+			bottom: 15px;
+		};
 		-webkit-margin-collapse: collapse;
-
-		&:first-of-type {
-			margin-top: auto;
-		}
 	}
 
 	dl, dt, dd {
@@ -93,6 +99,14 @@ body.scott {
 		}
 	}
 
+	dt {
+		font-weight: bold;
+	}
+
+	dd {
+		margin-left: 30px;
+	}
+	
 	pre, tt, code, kbd, samp, textarea {
 		font: {
 			family: $font_code;
@@ -130,46 +144,54 @@ body.scott {
 	}
 
 	/** Header */
+
 	#tm_webpreview_header {
+		@include text-shadow(0 1px 0 rgba(255,255,255,.4));
 		background: none;
 		border: none;
-		color: $default;
+		color: $heading;
 		display: block;
-		font-size: $font_size;
+		font: {
+			size: $font_size;
+			weight: bold;
+		};
 		height: $header_height;
-		line-height: $header_height;
 		left: -2px;
+		line-height: $header_height;
 		overflow: visible;
 		padding: 0;
 		position: fixed;
 		right: -2px;
-		@include text-shadow(0 1px 0 rgba(255,255,255,.4));
 		top: 0;
 		width: auto;
 		z-index: 10000;
 
-		#gradient, #teaser {
+		#gradient {
+			height: $header_height * 2;
+			visibility: collapse;
+			width: 0;
+		}
+
+		#teaser {
 			display: none;
 		}
 
+		/** Title */
+
 		.headline {
 			@include background-origin(border-box);
-			@include background-image(
-				linear-gradient(top, rgba(215,215,215,.88), rgba(180,180,180,.75)),
-				url("images/noise.png")
-			);
-			background-color: transparent;
-			border: none;
+			@include background-image(linear-gradient(top, rgba(215,215,215,.88), rgba(180,180,180,.75)), url("images/noise.png"));
 			@include box-shadow(0 1px 0 rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.5), 0 -1px 0 rgba(255,255,255,0.15) inset);
 			@include box-sizing(border-box);
+			background-color: transparent;
+			border: none;
 			font: {
 				family: $font_heading;
 				size: 18px;
-				weight: bold;
-			}
-			margin: 0;
+			};
 			height: auto;
 			line-height: inherit;
+			margin: 0;
 			overflow-x: hidden;
 			padding: 0 200px 0 12px;
 			position: relative;
@@ -177,6 +199,8 @@ body.scott {
 			white-space: nowrap;
 			z-index: 10;
 		}
+
+		/** Subtitle */
 
 		.type {
 			@include background-image(linear-gradient(top, rgba(89,9,89,.9), rgba(153,15,135,.9)));
@@ -189,20 +213,18 @@ body.scott {
 				left: 1px solid rgba(0,0,0,.1);
 				right: 1px solid rgba(0,0,0,.1);
 				top: none;
-			}
+			};
 			color: #fff;
 			float: left;
-			font: {
-				size: $font-size - 1;
-				weight: bold;
-			}
-			line-height: $header_height * .5;
+			font-size: $font-size - 1;
+			line-height: $header_height / 2;
 			margin: 0 7px;
 			max-width: 92%;
-			min-height: 1px;
+			min-height: 3px;
 			overflow: hidden;
 			padding: 2px 10px;
 			position: static;
+			text-align: center;
 			text-overflow: ellipsis;
 			white-space: nowrap;
 			width: auto;
@@ -212,7 +234,7 @@ body.scott {
 			}
 		}
 	}
-	
+
 	/** Theme switcher */
 
 	#theme_switcher {
@@ -222,8 +244,6 @@ body.scott {
 		font-weight: bold;
 		margin: 0;
 		opacity: 1;
-		// height: $header_height;
-		// line-height: $header_height;
 		max-width: 20em;
 		padding: 0 1em 0 0;
 		position: absolute;
@@ -247,7 +267,7 @@ body.scott {
 				color: #ddd;
 				position: right center;
 				repeat: no-repeat, repeat-x;
-			}
+			};
 			border: 1px solid rgba(100,100,100,.5);
 			color: #444;
 			font-weight: bold;
@@ -262,24 +282,22 @@ body.scott {
 	}
 
 	/** Footer */
-	
+
 	#tm_webpreview_footer {
 		@include text-shadow(none);
 		@include background-origin(border-box);
-		@include background-image(
-			linear-gradient(top, rgba(242,242,242,.95), rgba(242,242,242,.95))
-		);
+		@include background-image(linear-gradient(top, rgba(242,242,242,.95), rgba(242,242,242,.95)));
 		@include border-radius(0);
 		@include box-shadow(0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 0 2px 0 rgba(0, 0, 0, 0.4));
 		background-color: transparent;
 		border: 0;
 		bottom: 0;
+		color: #222;
+		display: block;
 		font: {
 			size: $font-size - 1;
 			weight: 500;
-		}
-		color: #222;
-		display: block;
+		};
 		height: auto;
 		left: 0;
 		margin: 0 auto;
@@ -301,65 +319,59 @@ body.scott {
 	}
 
 	/** Content */
-	
+
 	#tm_webpreview_content {
+		-webkit-user-select: auto;
 		@include box-sizing(border-box);
 		background: none;
-		bottom: 0;
-		height: auto;
-		left: 0;
-		margin: 0;
-		overflow: auto;
-		padding: $header_height 1.5em 1.5em;
-		position: absolute;
-		right: 0;
-		top: $header_height;
-		width: auto;
+		margin: $header_height * 2 1.5em 1.5em;
+		padding: 0;
 
 		:first-child {
 			margin-top: auto;
 		}
 	}
-	
-	/** Pro Table */
-	
+
+	/** Tables */
+
+	table:not([class]):not([style]),
 	.pro_table {
-		border-bottom: 2px solid #eaeaea;
-		border-collapse: inherit;
-		border-spacing: 0;
+		border: {
+			bottom: 2px solid #eaeaea;
+			collapse: inherit;
+			spacing: 0;
+		};
 		font-size: inherit;
 		margin: 0;
 		padding: 0;
 
-
 		th, td {
-			background-color: $default__bg;
+			margin: 0;
 			padding: 4px 8px;
+			text-align: left;
 		}
 
 		th {
-			@include background-image(linear-gradient(top, rgba(255,255,255,0), rgba(150,150,150,.15)));
-			@include background-origin(border-box);
-			@include box-shadow(0 -3px 4px -3px rgba(0,0,0,.2) inset);
-			border-bottom: 1px solid #bbb;
-			font-weight: bold;
-			text-align: left;
+			font-weight: 700;
 		}
 
 		td {
 			vertical-align: top;
 		}
 
+		/** Column headers */
+
+		thead > tr > th,
+		& > tbody:first-child > tr:first-child > th {
+			@include box-shadow(0 -3px 4px -3px rgba(0, 0, 0, 0.2) inset, 0 -35px 35px -35px rgba(50, 50, 50, 0.1) inset);
+			border-bottom: 1px solid #bbb;
+		}
+
+		/** Striped rows */
+
 		& > tbody > tr:nth-child(even) > td {
 			background-color: #f3f6fa;
-		}
-
-		p {
-			margin: 0;
-		}
-
-		p + p {
-			margin-top: 1em;
+			background-color: rgba(206,219,234,0.25);
 		}
 	}
 
@@ -369,12 +381,21 @@ body.scott {
 	}
 
 	.alternate {
-		background-color: #f0f0f0;
+		background-color: #f2f5fa;
 	}
-	
-	/** Ruby rdoc */
-	
-	#actual_output {
-		margin: 0 !important;
+
+	#tm_webpreview_content > .viewport {
+		@include border-radius(0);
+		bottom: 0;
+		left: 0;
+		margin: 0;
+		padding-top: 10px;
+		position: absolute;
+		right: 0;
+		top: 30px;
 	}
+
+	/** Module Specific Styles */
+	// @import "modules/_executor.scss";
+	@import "modules/_ruby-rdoc.scss";
 }

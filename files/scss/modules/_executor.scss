@@ -1,0 +1,76 @@
+/** TextMate Executor */
+
+div.executor {
+	.controls {
+		text-align: right;
+		float: right;
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	pre em {
+		font-style: normal;
+		color: #FF5600;
+	}
+
+	p#exception strong {
+		color: #E4450B;
+	}
+	
+	p#traceback {
+		font-size: 8pt;
+	}
+	
+	blockquote {
+		font-style: normal;
+		border: none;
+	}
+	
+	table {
+		margin: 0;
+		padding: 0;
+	}
+	
+	td {
+		margin: 0;
+		padding: 2px 2px 2px 5px;
+		font-size: 10pt;
+	}
+	
+	div#_executor_output {
+		white-space: normal;
+		-khtml-nbsp-mode: space;
+		-khtml-line-break: after-white-space;
+	}
+}
+
+div#_executor_output {
+	.out {}
+	
+	.err {
+		color: red;
+	}
+	
+	.echo {
+		font-style: italic;
+	}
+	
+	.test {
+		font-weight: bold;
+	}
+	
+	.test.ok {
+		color: green;
+	}
+	
+	.test.fail {
+		color: red;
+	}
+}
+
+div#exception_report pre.snippet {
+	margin: 4pt;
+	padding: 4pt;
+}
