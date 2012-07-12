@@ -2,7 +2,7 @@
 
 **An alternative TextMate Web Preview theme.**
 
-## Install
+## Installing
 
 Run these commands from an open Terminal window:
 
@@ -10,13 +10,17 @@ Run these commands from an open Terminal window:
 	cd ~/Library/Application\ Support/TextMate/Themes/Webpreview
 	curl -L https://github.com/downloads/wafflesnatcha/scott.textmate/scott.tar.gz | tar xz
 
-Or, just [download the .zip][.zip] and extract it into `~/Library/Application Support/TextMate/Themes/Webpreview`
+Or, just [download the .zip][.zip] and extract it into
+`~/Library/Application Support/TextMate/Themes/Webpreview`
 
 ## Downloads
 
-[scott.zip][.zip] (7KB) April 13, 2012
+**[scott.zip][.zip]**  
+**7KB** *April 13, 2012*
 
-[scott.tar.gz][.tar.gz] (8KB) April 13, 2012
+**[scott.tar.gz][.tar.gz]**  
+**8KB** *April 13, 2012*
+
 
 ## Screens
 
