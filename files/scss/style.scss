@@ -66,6 +66,12 @@ body.scott {
 			text-decoration: underline;
 		}
 	}
+	
+	a:not([href]) {
+		&:hover, &:active, &:focus {
+			text-decoration: none;
+		}		
+	}
 
 	b, strong {
 		font-weight: 700;
@@ -334,11 +340,17 @@ body.scott {
 
 	/** Tables */
 
-	table:not([class]):not([style]),
+	table {
+		border-collapse: collapse;
+		empty-cells: show;
+	}
+
+	// Only target tables with no existing class or style definition
+	table:not([class*=":"]):not([style*=":"]),
 	.pro_table {
 		border: {
 			bottom: 2px solid #eaeaea;
-			collapse: inherit;
+			collapse: separate;
 			spacing: 0;
 		};
 		font-size: inherit;
@@ -355,20 +367,21 @@ body.scott {
 			font-weight: 700;
 		}
 
+		& > tbody > tr > th,
 		td {
 			vertical-align: top;
 		}
 
 		/** Column headers */
 
-		thead > tr > th,
+		& > thead > tr > th,
 		& > tbody:first-child > tr:first-child > th {
 			@include box-shadow(0 -3px 4px -3px rgba(0, 0, 0, 0.2) inset, 0 -35px 35px -35px rgba(50, 50, 50, 0.1) inset);
 			border-bottom: 1px solid #bbb;
 		}
 
 		/** Striped rows */
-
+		
 		& > tbody > tr:nth-child(even) > td {
 			background-color: #f3f6fa;
 			background-color: rgba(206,219,234,0.25);
@@ -376,26 +389,34 @@ body.scott {
 	}
 
 	div.footnotes {
+		font-size: $font_size - 1;
 		padding: 1em;
-		font-size: 90%;
+
+		li > p {
+			display: inline;
+		}
 	}
 
 	.alternate {
-		background-color: #f2f5fa;
+		background-color: #f3f6fa;
+		background-color: rgba(206,219,234,0.25);
 	}
 
 	#tm_webpreview_content > .viewport {
 		@include border-radius(0);
 		bottom: 0;
+		height: auto;
 		left: 0;
 		margin: 0;
-		padding-top: 10px;
+		padding-top: 20px;
 		position: absolute;
 		right: 0;
 		top: 30px;
+		width: auto;
 	}
 
 	/** Module Specific Styles */
-	// @import "modules/_executor.scss";
-	@import "modules/_ruby-rdoc.scss";
+	@import "modules/_executor";
+	@import "modules/_ruby-rdoc";
+	@import "modules/_subversion";
 }
