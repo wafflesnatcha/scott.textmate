@@ -18,6 +18,8 @@ $body__bg: #fff;
 
 $blockquote: #444;
 
+$code__bg: #eee;
+
 $heading: $body;
 
 $link: #1525ab;
@@ -66,11 +68,25 @@ body.scott {
 			text-decoration: underline;
 		}
 	}
-	
+
 	a:not([href]) {
 		&:hover, &:active, &:focus {
 			text-decoration: none;
-		}		
+		}
+	}
+	
+	a[rel="external"]::after {
+		content: image-url('external-link.png');
+		height: 12px;
+		line-height: 12px;
+		margin: 0;
+		opacity: .8;
+		padding: 0 0 0 2px;
+		vertical-align: text-bottom;
+		width: 16px;
+	}
+
+	a[rel="external"]::after:hover {
 	}
 
 	b, strong {
@@ -112,18 +128,27 @@ body.scott {
 	dd {
 		margin-left: 30px;
 	}
-	
+
 	pre, tt, code, kbd, samp, textarea {
 		font: {
 			family: $font_code;
 			size: inherit;
-		}
+		};
 	}
 
-	pre {
+	code, pre {
 		@include border-radius(3px);
+		background: $code__bg;
+		background: transparentize(darken($code__bg, 20%), .75);
+		border: 1px solid rgba(150,150,150,.07);
+	}
+	
+	code {
+		padding: 1px 4px;
+	}
+	
+	pre {
 		@include box-sizing(border-box);
-		background: #eee;
 		margin: 1em 0;
 		overflow: auto;
 		padding: .6em .8em;
@@ -132,11 +157,14 @@ body.scott {
 		word-wrap: normal;
 
 		code {
+			background: transparent;
+			border: none;
+			padding: 0;
 			white-space: pre;
 			word-wrap: normal;
 		}
 	}
-
+	
 	hr {
 		background-color: #e0e0e0;
 		border: none;
@@ -149,9 +177,9 @@ body.scott {
 		margin: 0;
 	}
 
-	/** Header */
 
 	#tm_webpreview_header {
+		/** Header */
 		@include text-shadow(0 1px 0 rgba(255,255,255,.4));
 		background: none;
 		border: none;
@@ -182,9 +210,8 @@ body.scott {
 			display: none;
 		}
 
-		/** Title */
-
 		.headline {
+			/** Title */
 			@include background-origin(border-box);
 			@include background-image(linear-gradient(top, rgba(215,215,215,.88), rgba(180,180,180,.75)), url("images/noise.png"));
 			@include box-shadow(0 1px 0 rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.5), 0 -1px 0 rgba(255,255,255,0.15) inset);
@@ -206,9 +233,8 @@ body.scott {
 			z-index: 10;
 		}
 
-		/** Subtitle */
-
 		.type {
+			/** Subtitle */
 			@include background-image(linear-gradient(top, rgba(89,9,89,.9), rgba(153,15,135,.9)));
 			@include background-origin(border-box);
 			@include border-radius(0 0 3px 3px);
@@ -241,9 +267,8 @@ body.scott {
 		}
 	}
 
-	/** Theme switcher */
-
 	#theme_switcher {
+		/** Theme switcher */
 		@include box-sizing(border-box);
 		color: #4a4a4a;
 		font-size: 10px;
@@ -287,15 +312,14 @@ body.scott {
 		}
 	}
 
-	/** Footer */
 
 	#tm_webpreview_footer {
+		/** Footer */
 		@include text-shadow(none);
 		@include background-origin(border-box);
-		@include background-image(linear-gradient(top, rgba(242,242,242,.95), rgba(242,242,242,.95)));
 		@include border-radius(0);
 		@include box-shadow(0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 0 2px 0 rgba(0, 0, 0, 0.4));
-		background-color: transparent;
+		background-color: rgba(242,242,242,.95);
 		border: 0;
 		bottom: 0;
 		color: #222;
@@ -324,7 +348,6 @@ body.scott {
 		}
 	}
 
-	/** Content */
 
 	#tm_webpreview_content {
 		-webkit-user-select: auto;
@@ -338,18 +361,17 @@ body.scott {
 		}
 	}
 
-	/** Tables */
-
 	table {
 		border-collapse: collapse;
 		empty-cells: show;
 	}
 
 	// Only target tables with no existing class or style definition
-	table:not([class*=":"]):not([style*=":"]),
+	table:not([class]):not([style*=":"]),
 	.pro_table {
+		@include box-shadow(0 1px 0 0 rgba(150,150,150,.1));
 		border: {
-			bottom: 2px solid #eaeaea;
+			bottom: 1px solid #d0d0d0;
 			collapse: separate;
 			spacing: 0;
 		};
@@ -372,17 +394,27 @@ body.scott {
 			vertical-align: top;
 		}
 
-		/** Column headers */
-
 		& > thead > tr > th,
 		& > tbody:first-child > tr:first-child > th {
 			@include box-shadow(0 -3px 4px -3px rgba(0, 0, 0, 0.2) inset, 0 -35px 35px -35px rgba(50, 50, 50, 0.1) inset);
-			border-bottom: 1px solid #bbb;
+			border-bottom: 1px solid #c6c6c6;
 		}
 
-		/** Striped rows */
-		
+		& > tbody:first-child > tr:first-child > td {
+			@include box-shadow(0 -1px 0 0 rgba(150, 150, 150, 0.1));
+			border-top: 1px solid #d6d6d6;
+		}
+
+		& > tbody:first-child > tr > td:first-child {
+			border-left: 1px solid #e2e2e2;
+		}
+
+		& > tbody:first-child > tr > td:last-child {
+			border-right: 1px solid #e2e2e2;
+		}
+
 		& > tbody > tr:nth-child(even) > td {
+			/** Striped rows */
 			background-color: #f3f6fa;
 			background-color: rgba(206,219,234,0.25);
 		}
@@ -404,6 +436,7 @@ body.scott {
 
 	#tm_webpreview_content > .viewport {
 		@include border-radius(0);
+		border: none;
 		bottom: 0;
 		height: auto;
 		left: 0;
@@ -411,11 +444,17 @@ body.scott {
 		padding-top: 20px;
 		position: absolute;
 		right: 0;
-		top: 30px;
+		top: $header_height;
 		width: auto;
+	}
+	
+	#tm_webpreview_content > .viewport.theme-error {
+		border: 3px solid #f00 !important;
+		border-top-width: 4px !important;
 	}
 
 	/** Module Specific Styles */
+	@import "modules/_pygments";
 	@import "modules/_executor";
 	@import "modules/_ruby-rdoc";
 	@import "modules/_subversion";
