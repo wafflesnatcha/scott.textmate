@@ -1,20 +1,18 @@
-COMPASS_PROJECT = File.dirname(__FILE__)
-
 task :default do
-	exec("rake --rakefile '#{__FILE__}' --tasks")
+	exec("rake -sT")
 end
 
-desc "Switch to the development environment"
-task :development => ["clean"] do
-	system("cd '#{COMPASS_PROJECT}' &>/dev/null && compass compile --time -e development")
+desc "Compile Sass stylesheets to CSS"
+task :compass => ["clean"] do
+	system("compass compile")
 end
 
-desc "Switch to the production environment"
-task :production => ["clean"] do
-	system("cd '#{COMPASS_PROJECT}' &>/dev/null && compass compile --time -e production --force")
+desc "Watch for changes and compile"
+task :watch do
+	exec("compass watch")
 end
 
-desc "Remove cache and generated files"
+desc "Remove generated files and the sass cache"
 task :clean do
-	system("cd '#{COMPASS_PROJECT}' &>/dev/null && compass clean")
+	system("compass clean")
 end
