@@ -1,1 +1,82 @@
-body.scott{background:#fff;color:#000;height:auto;margin:auto;overflow:auto;padding:auto}.scott #tm_webpreview_header,.scott #tm_webpreview_header .headline,.scott #tm_webpreview_header .type,.scott #tm_webpreview_content,.scott #tm_webpreview_footer{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;text-shadow:none;background:transparent none;border:none;color:#000;display:block;float:none;height:auto;margin:auto;max-height:none;max-width:none;min-height:0;min-width:0;padding:0;position:static;white-space:normal}.scott #theme_switcher{display:none}.scott #tm_webpreview_footer{margin:1em 0 0}.scott #tm_webpreview_header .headline,.scott h1{font-size:2em}.scott #tm_webpreview_header .type,.scott h2{font-size:1.5em}.scott h3{font-size:1.17em}.scott h4{font-size:1em}.scott h5{font-size:0.83em}.scott h6{font-size:0.67em}.scott a,.scott a:hover,.scott a:visited{color:#1525ab;text-decoration:underline}.scott pre{background:none;border-radius:0;border:none;color:#000;padding:0;position:static;white-space:pre-line;word-wrap:break-word}.scott hr{background:#999;border:1px solid #999;height:auto;margin:auto;padding:0}.scott h1,.scott h2,.scott h3,.scott h4,.scott h5,.scott h6,.scott p,.scott pre,.scott blockquote{margin-bottom:.6em;margin-top:.6em}
+body.scott {
+  background: white;
+  color: black;
+  height: auto;
+  margin: auto;
+  overflow: auto;
+  padding: auto;
+}
+
+.scott #tm_webpreview_header,
+.scott #tm_webpreview_header .headline,
+.scott #tm_webpreview_header .type,
+.scott #tm_webpreview_content,
+.scott #tm_webpreview_footer {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  background: transparent none;
+  border: none;
+  color: black;
+  display: block;
+  float: none;
+  height: auto;
+  margin: auto;
+  max-height: none;
+  max-width: none;
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+  position: static;
+  white-space: normal;
+}
+.scott #theme_switcher {
+  display: none;
+}
+.scott #tm_webpreview_footer {
+  margin: 1em 0 0;
+}
+.scott #tm_webpreview_header .headline, .scott h1 {
+  font-size: 2em;
+}
+.scott #tm_webpreview_header .type, .scott h2 {
+  font-size: 1.5em;
+}
+.scott h3 {
+  font-size: 1.17em;
+}
+.scott h4 {
+  font-size: 1em;
+}
+.scott h5 {
+  font-size: 0.83em;
+}
+.scott h6 {
+  font-size: 0.67em;
+}
+.scott a, .scott a:hover, .scott a:visited {
+  color: #1525ab;
+  text-decoration: underline;
+}
+.scott pre {
+  background: none;
+  border-radius: 0;
+  border: none;
+  color: black;
+  padding: 0;
+  position: static;
+  white-space: pre-line;
+  word-wrap: break-word;
+}
+.scott hr {
+  background: #999;
+  border: 1px solid #999;
+  height: auto;
+  margin: auto;
+  padding: 0;
+}
+.scott h1, .scott h2, .scott h3, .scott h4, .scott h5, .scott h6, .scott p, .scott pre, .scott blockquote {
+  margin-bottom: .6em;
+  margin-top: .6em;
+}

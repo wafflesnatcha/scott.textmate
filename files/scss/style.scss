@@ -46,7 +46,7 @@ body.scott {
 			family: $font_heading;
 			style: normal;
 			weight: 500;
-		}
+		};
 	}
 
 	h1 { font-size: 2em; }
@@ -84,9 +84,6 @@ body.scott {
 		padding: 0 0 0 2px;
 		vertical-align: text-bottom;
 		width: 16px;
-	}
-
-	a[rel="external"]::after:hover {
 	}
 
 	b, strong {
@@ -177,9 +174,8 @@ body.scott {
 		margin: 0;
 	}
 
-
+	// Header
 	#tm_webpreview_header {
-		/** Header */
 		@include text-shadow(0 1px 0 rgba(255,255,255,.4));
 		background: none;
 		border: none;
@@ -210,8 +206,8 @@ body.scott {
 			display: none;
 		}
 
+		// Title
 		.headline {
-			/** Title */
 			@include background-origin(border-box);
 			@include background-image(linear-gradient(top, rgba(215,215,215,.88), rgba(180,180,180,.75)), url("images/noise.png"));
 			@include box-shadow(0 1px 0 rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.5), 0 -1px 0 rgba(255,255,255,0.15) inset);
@@ -233,8 +229,8 @@ body.scott {
 			z-index: 10;
 		}
 
+		// Subtitle
 		.type {
-			/** Subtitle */
 			@include background-image(linear-gradient(top, rgba(89,9,89,.9), rgba(153,15,135,.9)));
 			@include background-origin(border-box);
 			@include border-radius(0 0 3px 3px);
@@ -268,7 +264,7 @@ body.scott {
 	}
 
 	#theme_switcher {
-		/** Theme switcher */
+		// Theme switcher
 		@include box-sizing(border-box);
 		color: #4a4a4a;
 		font-size: 10px;
@@ -312,9 +308,8 @@ body.scott {
 		}
 	}
 
-
+	// Footer
 	#tm_webpreview_footer {
-		/** Footer */
 		@include text-shadow(none);
 		@include background-origin(border-box);
 		@include border-radius(0);
@@ -414,7 +409,7 @@ body.scott {
 		}
 
 		& > tbody > tr:nth-child(even) > td {
-			/** Striped rows */
+			// Striped rows
 			background-color: #f3f6fa;
 			background-color: rgba(206,219,234,0.25);
 		}
@@ -453,7 +448,7 @@ body.scott {
 		border-top-width: 4px !important;
 	}
 
-	/** Module Specific Styles */
+	// Module Specific Styles
 	@import "modules/_pygments";
 	@import "modules/_executor";
 	@import "modules/_ruby-rdoc";
