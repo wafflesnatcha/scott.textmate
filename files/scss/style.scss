@@ -19,6 +19,7 @@ $body__bg: #fff;
 $blockquote: #444;
 
 $code__bg: #eee;
+$code_font-size: $font-size - 1;
 
 $heading: $body;
 
@@ -74,7 +75,7 @@ body.scott {
 			text-decoration: none;
 		}
 	}
-	
+
 	a[rel="external"] {
 		margin-right: image-width('external-link.png') - 1;
 	}
@@ -141,14 +142,15 @@ body.scott {
 	code, pre {
 		@include border-radius(3px);
 		background: $code__bg;
-		background: transparentize(darken($code__bg, 20%), .75);
 		border: 1px solid rgba(150,150,150,.07);
+		font-size: $code_font-size;
 	}
-	
+
 	code {
+		display: inline-block;
 		padding: 1px 4px;
 	}
-	
+
 	pre {
 		@include box-sizing(border-box);
 		margin: 1em 0;
@@ -161,12 +163,13 @@ body.scott {
 		code {
 			background: transparent;
 			border: none;
+			display: inline;
 			padding: 0;
 			white-space: pre;
 			word-wrap: normal;
 		}
 	}
-	
+
 	hr {
 		background-color: #e0e0e0;
 		border: none;
@@ -199,7 +202,7 @@ body.scott {
 		right: -2px;
 		top: 0;
 		width: auto;
-		z-index: 10000;
+		z-index: 10010;
 
 		#gradient {
 			height: $header_height * 2;
@@ -313,7 +316,6 @@ body.scott {
 		}
 	}
 
-	// Footer
 	#tm_webpreview_footer {
 		@include text-shadow(none);
 		@include background-origin(border-box);
@@ -347,7 +349,6 @@ body.scott {
 			padding: 0;
 		}
 	}
-
 
 	#tm_webpreview_content {
 		-webkit-user-select: auto;
@@ -434,23 +435,18 @@ body.scott {
 		background-color: rgba(206,219,234,0.25);
 	}
 
-	#tm_webpreview_content > .viewport {
-		@include border-radius(0);
-		border: none;
-		bottom: 0;
-		height: auto;
-		left: 0;
+
+	.notice.error {
+		@include box-shadow(
+			0 50px 50px -40px rgba(255,100,100,.1) inset,
+			0 0 3px 0 rgba(255,0,0,.5) inset,
+			0 0 1px rgba(80,0,0,.3)
+		);
+		@include border-radius(3px);
+		background: #fff8f8;
+		border: 1px solid #e30b0b;
+		padding: 5px 8px 6px;
 		margin: 0;
-		padding-top: 20px;
-		position: absolute;
-		right: 0;
-		top: $header_height;
-		width: auto;
-	}
-	
-	#tm_webpreview_content > .viewport.theme-error {
-		border: 3px solid #f00 !important;
-		border-top-width: 4px !important;
 	}
 
 	// Module Specific Styles

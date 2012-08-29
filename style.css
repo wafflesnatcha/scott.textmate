@@ -8,14 +8,6 @@ body.scott {
   padding: 0;
 }
 
-.scott {
-  /** TextMate Executor */
-  /** Ruby rdoc */
-  /* ===================== */
-  /* = Subversion Styles = */
-  /* ===================== */
-  /* console is invisible by default */
-}
 .scott h1, .scott h2, .scott h3, .scott h4, .scott h5, .scott h6 {
   color: black;
   font-family: "Helvetica Neue", "Helvetica", sans-serif;
@@ -53,15 +45,19 @@ body.scott {
 .scott a:not([href]):hover, .scott a:not([href]):active, .scott a:not([href]):focus {
   text-decoration: none;
 }
+.scott a[rel="external"] {
+  margin-right: 11px;
+}
 .scott a[rel="external"]::after {
   content: url('images/external-link.png?1343090155');
   height: 12px;
-  line-height: 12px;
-  margin: 0;
+  line-height: 100%;
+  margin: 0 0 0 -1px;
   opacity: .8;
   padding: 0 0 0 2px;
-  vertical-align: text-bottom;
-  width: 16px;
+  position: absolute;
+  vertical-align: middle;
+  width: 12px;
 }
 .scott b, .scott strong {
   font-weight: 700;
@@ -98,10 +94,11 @@ body.scott {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   background: #eeeeee;
-  background: rgba(187, 187, 187, 0.25);
   border: 1px solid rgba(150, 150, 150, 0.07);
+  font-size: 11px;
 }
 .scott code {
+  display: inline-block;
   padding: 1px 4px;
 }
 .scott pre {
@@ -117,6 +114,7 @@ body.scott {
 .scott pre code {
   background: transparent;
   border: none;
+  display: inline;
   padding: 0;
   white-space: pre;
   word-wrap: normal;
@@ -148,7 +146,7 @@ body.scott {
   right: -2px;
   top: 0;
   width: auto;
-  z-index: 10000;
+  z-index: 10010;
 }
 .scott #tm_webpreview_header #gradient {
   height: 4.8em;
@@ -234,7 +232,7 @@ body.scott {
 .scott #theme_switcher form {
   padding: 0;
 }
-.scott #theme_switcher #theme_selector {
+.scott #theme_switcher #theme_selector, .scott #theme_switcher div.executor > .controls a, .scott div.executor > .controls #theme_switcher a {
   -webkit-appearance: none;
   appearance: none;
   background-image: url("images/arrow_down.png"), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.7)), color-stop(100%, rgba(201, 201, 201, 0.7)));
@@ -258,7 +256,7 @@ body.scott {
   outline: none;
   padding: .2em .5em .3em;
 }
-.scott #theme_switcher #theme_selector:hover {
+.scott #theme_switcher #theme_selector:hover, .scott #theme_switcher div.executor > .controls a:hover, .scott div.executor > .controls #theme_switcher a:hover {
   background-color: #fff;
 }
 .scott #tm_webpreview_footer, .scott div#exception_report.framed:last-child {
@@ -374,95 +372,25 @@ body.scott {
   background-color: #f3f6fa;
   background-color: rgba(206, 219, 234, 0.25);
 }
-.scott #tm_webpreview_content > .viewport {
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  border: none;
-  bottom: 0;
-  height: auto;
-  left: 0;
+.scott .notice.error, .scott div#exception_report {
+  -webkit-box-shadow: 0 50px 50px -40px rgba(255, 100, 100, 0.1) inset, 0 0 3px 0 rgba(255, 0, 0, 0.5) inset, 0 0 1px rgba(80, 0, 0, 0.3);
+  box-shadow: 0 50px 50px -40px rgba(255, 100, 100, 0.1) inset, 0 0 3px 0 rgba(255, 0, 0, 0.5) inset, 0 0 1px rgba(80, 0, 0, 0.3);
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: #fff8f8;
+  border: 1px solid #e30b0b;
+  padding: 5px 8px 6px;
   margin: 0;
-  padding-top: 20px;
-  position: absolute;
-  right: 0;
-  top: 2.4em;
-  width: auto;
-}
-.scott #tm_webpreview_content > .viewport.theme-error {
-  border: 3px solid #f00 !important;
-  border-top-width: 4px !important;
-}
-.scott .highlight pre {
-  /* Comment */
-  /* Error */
-  /* Keyword */
-  /* Operator */
-  /* Comment.Multiline */
-  /* Comment.Preproc */
-  /* Comment.Single */
-  /* Comment.Special */
-  /* Generic.Deleted */
-  /* Generic.Emph */
-  /* Generic.Error */
-  /* Generic.Heading */
-  /* Generic.Inserted */
-  /* Generic.Output */
-  /* Generic.Prompt */
-  /* Generic.Strong */
-  /* Generic.Subheading */
-  /* Generic.Traceback */
-  /* Keyword.Constant */
-  /* Keyword.Declaration */
-  /* Keyword.Namespace */
-  /* Keyword.Pseudo */
-  /* Keyword.Reserved */
-  /* Keyword.Type */
-  /* Literal.Number */
-  /* Literal.String */
-  /* Name.Attribute */
-  /* Name.Builtin */
-  /* Name.Class */
-  /* Name.Constant */
-  /* Name.Decorator */
-  /* Name.Entity */
-  /* Name.Exception */
-  /* Name.Function */
-  /* Name.Label */
-  /* Name.Namespace */
-  /* Name.Tag */
-  /* Name.Variable */
-  /* Operator.Word */
-  /* Text.Whitespace */
-  /* Literal.Number.Float */
-  /* Literal.Number.Hex */
-  /* Literal.Number.Integer */
-  /* Literal.Number.Oct */
-  /* Literal.String.Backtick */
-  /* Literal.String.Char */
-  /* Literal.String.Doc */
-  /* Literal.String.Double */
-  /* Literal.String.Escape */
-  /* Literal.String.Heredoc */
-  /* Literal.String.Interpol */
-  /* Literal.String.Other */
-  /* Literal.String.Regex */
-  /* Literal.String.Single */
-  /* Literal.String.Symbol */
-  /* Name.Builtin.Pseudo */
-  /* Name.Variable.Class */
-  /* Name.Variable.Global */
-  /* Name.Variable.Instance */
-  /* Literal.Number.Integer.Long */
 }
 .scott .highlight pre .hll {
   background-color: #ffffcc;
 }
+.scott .highlight pre .err {
+  border: 1px solid #FF0000;
+}
 .scott .highlight pre .c {
   color: #408080;
   font-style: italic;
-}
-.scott .highlight pre .err {
-  border: 1px solid #FF0000;
 }
 .scott .highlight pre .k {
   color: #008000;
@@ -667,7 +595,7 @@ body.scott {
   right: 0;
   padding: .3em .6em .4em;
   text-align: right;
-  z-index: 10100;
+  z-index: 10001;
 }
 .scott div.executor > .controls a:hover {
   text-decoration: underline;
@@ -692,14 +620,8 @@ body.scott {
   color: #e30000;
 }
 .scott div#exception_report {
-  -webkit-box-shadow: 0 50px 50px -40px rgba(255, 100, 100, 0.1) inset, 0 0 3px 0 rgba(255, 0, 0, 0.5) inset, 0 0 1px rgba(80, 0, 0, 0.3);
-  box-shadow: 0 50px 50px -40px rgba(255, 100, 100, 0.1) inset, 0 0 3px 0 rgba(255, 0, 0, 0.5) inset, 0 0 1px rgba(80, 0, 0, 0.3);
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  background: rgba(255, 150, 150, 0.05);
-  border: 1px solid #e30b0b;
-  padding: 5px 8px 6px;
-  margin: 0 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .scott div#exception_report.framed:last-child {
   font-size: 12px;
@@ -710,100 +632,4 @@ body.scott {
 }
 .scott #search_history + script + #actual_output {
   margin: 0 !important;
-}
-.scott div.subversion {
-  margin-top: 10px;
-  /* INFO */
-  /* BLAME */
-  /* some adds for the links in the table (clickable lines)..*/
-}
-.scott div.subversion dl.info dt {
-  font-weight: bold;
-  padding: 4px;
-  padding-bottom: 0;
-  margin: 0;
-  border-top: 1px dashed #ddd;
-}
-.scott div.subversion dl.info dt:first-child {
-  border-top: 0;
-}
-.scott div.subversion dl.info dt:after {
-  content: ":";
-}
-.scott div.subversion dl.info dd {
-  margin: 0;
-  padding: 4px;
-  padding-top: 0;
-  padding-left: 24px;
-}
-.scott div.subversion table.blame {
-  font-size: 12px;
-  padding: 1px;
-  border-collapse: collapse;
-  width: 100%;
-}
-.scott div.subversion table.blame a, .scott div.subversion table.blame a:visited, .scott div.subversion table.blame a:link {
-  text-decoration: none;
-  color: inherit;
-}
-.scott div.subversion table.blame td {
-  vertical-align: top;
-}
-.scott div.subversion table.blame td.codecol {
-  font-family: "Menlo", "Monaco", "Courier New", monospace;
-  padding-left: 4px;
-  width: 100%;
-}
-.scott #console {
-  display: none;
-}
-.scott h3.console {
-  margin-bottom: 0;
-}
-.scott #commandOutput {
-  border: 1px solid #808080;
-  font-family: monospace;
-  font-size: 85%;
-  margin: 0 1em 1em 0;
-  min-height: 2em;
-  padding-left: 1em;
-  width: 95%;
-}
-.scott table.status {
-  border: 0;
-  font-size: 11px;
-}
-.scott table.status th {
-  border: 0;
-  padding: 0.5ex 1ex 0.5ex 1ex;
-  text-align: left;
-}
-.scott table.status td {
-  padding: 3px;
-  /* center the status characters */
-  /* stretch the file column the length of the window */
-  /* Status ction buttons */
-}
-.scott table.status td.status_col {
-  text-align: center;
-}
-.scott table.status td.file_col {
-  padding: 0 1ex 0 2ex;
-  width: 100%;
-}
-.scott table.status td.action_button a:link {
-  padding: 1px;
-  border: 1px solid;
-  text-decoration: none;
-  font-size: 80%;
-  text-align: center;
-}
-.scott table.status td.action_button a:hover {
-  background: #BBB;
-}
-.scott table.status td.action_button a:active {
-  background: #555;
-}
-.scott div#actions {
-  margin-top: 1em;
 }

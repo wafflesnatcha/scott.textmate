@@ -1,19 +1,22 @@
-/** TextMate Executor */
+// TextMate Executor
 
-$succeed: #0acc0a; 
+$succeed: #0acc0a;
 $fail: #e30000;
 
 div.executor {
 	padding-bottom: 20px;
-	
+
 	& > .controls {
 		bottom: 0;
 		position: fixed;
 		right: 0;
 		padding: .3em .6em .4em;
 		text-align: right;
-		z-index: 10100;
-		
+		z-index: 10001;
+
+		a {
+			@extend #theme_selector;
+		}
 		a:hover {
 			text-decoration: underline;
 		}
@@ -28,22 +31,22 @@ div.executor {
 		@include text-shadow(0 1px 0 rgba(255,255,255,.7));
 		color: $fail;
 	}
-	
+
 	p#traceback {
 		// font-size: 8pt;
 	}
-	
+
 	blockquote {
 		// font-style: normal;
 		// border: none;
 	}
-	
+
 	table {
 		background: $body__bg;
 		// margin: 0;
 		// padding: 0;
 	}
-	
+
 	td {
 		// margin: 0;
 		// padding: 2px 2px 2px 5px;
@@ -55,35 +58,38 @@ div#_executor_output {
 	.err {
 		color: $fail;
 	}
-	
+
 	.echo {
 		font-style: italic;
 	}
-	
+
 	.test {
-		&.ok { color: $succeed; }
-		&.fail { color: $fail; }
+		&.ok {
+			color: $succeed;
+		}
+		&.fail {
+			color: $fail;
+		}
 	}
 }
 
 div#exception_report {
-	@include box-shadow(0 50px 50px -40px rgba(255,100,100,.1) inset, 0 0 3px 0 rgba(255,0,0,.5) inset, 0 0 1px rgba(80,0,0,.3));
-	@include border-radius(3px);
-	background: rgba(255,150,150,.05);
-	border: 1px solid #e30b0b;
-	padding: 5px 8px 6px;
-	margin: 0 20px;
-	
+	@extend .notice.error;
+	margin: {
+		left: 20px;
+		right: 20px;
+	};
+
 	&.framed:last-child {
 		@extend #tm_webpreview_footer;
 		font-size: $font_size;
 	}
-		
+
 	& > blockquote {
 		margin: 0;
 		padding: 0;
 	}
-	
+
 	pre.snippet {
 	}
 }
