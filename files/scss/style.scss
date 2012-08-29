@@ -75,15 +75,20 @@ body.scott {
 		}
 	}
 	
+	a[rel="external"] {
+		margin-right: image-width('external-link.png') - 1;
+	}
+	
 	a[rel="external"]::after {
 		content: image-url('external-link.png');
-		height: 12px;
-		line-height: 12px;
-		margin: 0;
+		height: image-height('external-link.png');
+		line-height: 100%;
+		margin: 0 0 0 -1px;
 		opacity: .8;
 		padding: 0 0 0 2px;
-		vertical-align: text-bottom;
-		width: 16px;
+		position: absolute;
+		vertical-align: middle;
+		width: image-width('external-link.png');
 	}
 
 	b, strong {
