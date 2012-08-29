@@ -1,18 +1,18 @@
 task :default do
-	exec("rake -sT")
-end
-
-desc "Compile Sass stylesheets to CSS"
-task :compass => ["clean"] do
-	system("compass compile")
-end
-
-desc "Watch for changes and compile"
-task :watch do
-	exec("compass watch")
+	exec "rake -sT"
 end
 
 desc "Remove generated files and the sass cache"
 task :clean do
-	system("compass clean")
+	system "compass clean"
+end
+
+desc "Compile Sass stylesheets to CSS"
+task :compass => ["clean"] do
+	system "compass compile"
+end
+
+desc "Watch for changes and compile"
+task :watch do
+	exec "compass watch"
 end
