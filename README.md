@@ -1,4 +1,4 @@
-# [scott.textmate][github-link]
+# [scott.textmate][github]
 
 **An alternative Web Preview theme for TextMate.**
 
@@ -24,23 +24,22 @@ Or, just [download the .zip][.zip] and extract it into: `~/Library/Application S
 
 [![screen1small][]][screen1]
 [![screen2small][]][screen2]
+{.gallery}
 
 ## Contributing
 
-**[Fork me on GitHub!][github-link]**
+**[Fork me on GitHub!][github]**
 
 You can run the latest development version with:
 
     cd ~/Library/Application\ Support/TextMate/Themes/Webpreview
     git clone git://github.com/wafflesnatcha/scott.textmate.git scott
 
-
-
-[github-link]: https://github.com/wafflesnatcha/scott.textmate
-[.zip]: https://github.com/downloads/wafflesnatcha/scott.textmate/scott.zip
-[.tar.gz]: https://github.com/downloads/wafflesnatcha/scott.textmate/scott.tar.gz
-[screen1]: https://github.com/wafflesnatcha/scott.textmate/raw/master/files/screens/1.png
-[screen2]: https://github.com/wafflesnatcha/scott.textmate/raw/master/files/screens/2.png
-[screen1small]: https://github.com/wafflesnatcha/scott.textmate/raw/master/files/screens/1small.png
-[screen2small]: https://github.com/wafflesnatcha/scott.textmate/raw/master/files/screens/2small.png
+[github]:       https://github.com/wafflesnatcha/scott.textmate
+[.zip]:         https://github.com/downloads/wafflesnatcha/scott.textmate/scott.zip
+[.tar.gz]:      https://github.com/downloads/wafflesnatcha/scott.textmate/scott.tar.gz
+[screen1]:      https://raw.github.com/wafflesnatcha/scott.textmate/master/files/screens/1.png
+[screen2]:      https://raw.github.com/wafflesnatcha/scott.textmate/master/files/screens/2.png
+[screen1small]: https://raw.github.com/wafflesnatcha/scott.textmate/master/files/screens/1small.png
+[screen2small]: https://raw.github.com/wafflesnatcha/scott.textmate/master/files/screens/2small.png
 
