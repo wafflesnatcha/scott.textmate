@@ -10,7 +10,8 @@ Run these commands from an open Terminal window:
     cd ~/Library/Application\ Support/TextMate/Themes/Webpreview
     curl -L https://github.com/downloads/wafflesnatcha/scott.textmate/scott.tar.gz | tar xz
 
-Or, just [download the .zip][.zip] and extract it into: `~/Library/Application Support/TextMate/Themes/Webpreview`
+Or, just [download the .zip][.zip] and extract it into:
+`~/Library/Application Support/TextMate/Themes/Webpreview`
 
 ## Downloads
 
@@ -24,7 +25,6 @@ Or, just [download the .zip][.zip] and extract it into: `~/Library/Application S
 
 [![screen1small][]][screen1]
 [![screen2small][]][screen2]
-{.gallery}
 
 ## Contributing
 
