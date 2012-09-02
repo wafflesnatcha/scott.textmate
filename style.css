@@ -50,9 +50,9 @@ body.scott {
   position: relative;
 }
 .scott a[rel="external"]::after {
-  background-image: url('images/external-link.png?1346624729'), -webkit-gradient(radial, 50%, 0, 50%, 100, color-stop(70%, rgba(255, 255, 255, 0.8)), color-stop(100%, rgba(255, 255, 255, 0.8)));
-  background-image: url('images/external-link.png?1346624729'), -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 0.8) 100%);
-  background-image: url('images/external-link.png?1346624729'), radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 0.8) 100%);
+  background-image: url('images/external-link.png?1346624729'), -webkit-gradient(radial, 50%, 0, 50%, 90, color-stop(65%, rgba(255, 255, 255, 0.8)), color-stop(90%, rgba(255, 255, 255, 0)));
+  background-image: url('images/external-link.png?1346624729'), -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 65%, rgba(255, 255, 255, 0) 90%);
+  background-image: url('images/external-link.png?1346624729'), radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 65%, rgba(255, 255, 255, 0) 90%);
   background-position: center;
   background-repeat: no-repeat;
   content: '';
@@ -61,8 +61,8 @@ body.scott {
   margin: 0;
   padding: 1px;
   position: absolute;
-  right: -8px;
-  top: 25%;
+  right: -12px;
+  top: 15%;
   width: 10px;
   z-index: 1;
 }

@@ -78,19 +78,32 @@ body.scott {
 	}
 
 	a[rel="external"] {
-		margin-right: image-width('external-link.png') - 1;
+		position: relative;
 	}
 	
 	a[rel="external"]::after {
-		content: image-url('external-link.png');
+	    @include background-image(
+	        image-url('external-link.png'),
+	        radial-gradient(center, ellipse cover, rgba(255,255,255,.8) 65%, rgba(255,255,255,0) 90%)
+        );
+		background: {
+		    position: center;
+		    repeat: no-repeat;
+		};
+		content: '';
+		display: none;
 		height: image-height('external-link.png');
-		line-height: 100%;
-		margin: 0 0 0 -1px;
-		opacity: .8;
-		padding: 0 0 0 2px;
+		margin: 0;
+		padding: 1px;
 		position: absolute;
-		vertical-align: middle;
+		right: -1 * ( image-width('external-link.png') + 2 );
+		top: 15%;
 		width: image-width('external-link.png');
+		z-index: 1;
+	}
+	
+	a[rel="external"]:hover::after {
+		display: block;
 	}
 
 	b, strong {
