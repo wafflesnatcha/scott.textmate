@@ -36,6 +36,7 @@ body.scott {
 		family: $font_body;
 		size: $font_size;
 	}
+	line-height: normal;
 	margin: 0;
 	padding: 0;
 }
@@ -110,11 +111,11 @@ body.scott {
 	}
 
 	h1, h2, h3, h4, h5, h6, p, pre, blockquote {
+		-webkit-margin-collapse: collapse;
 		margin: {
 			top: 15px;
 			bottom: 15px;
 		};
-		-webkit-margin-collapse: collapse;
 	}
 
 	dl, dt, dd {
@@ -144,6 +145,7 @@ body.scott {
 		background: $code__bg;
 		border: 1px solid rgba(150,150,150,.07);
 		font-size: $code_font-size;
+		line-height: normal;
 	}
 
 	code {

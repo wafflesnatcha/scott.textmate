@@ -4,6 +4,7 @@ body.scott {
   color: black;
   font-family: "Lucida Grande", "Lucida Sans", "Helvetica", sans-serif;
   font-size: 12px;
+  line-height: normal;
   margin: 0;
   padding: 0;
 }
@@ -46,18 +47,27 @@ body.scott {
   text-decoration: none;
 }
 .scott a[rel="external"] {
-  margin-right: 11px;
+  position: relative;
 }
 .scott a[rel="external"]::after {
-  content: url('images/external-link.png?1343090155');
-  height: 12px;
-  line-height: 100%;
-  margin: 0 0 0 -1px;
-  opacity: .8;
-  padding: 0 0 0 2px;
+  background-image: url('images/external-link.png?1346624729'), -webkit-gradient(radial, 50%, 0, 50%, 100, color-stop(70%, rgba(255, 255, 255, 0.8)), color-stop(100%, rgba(255, 255, 255, 0.8)));
+  background-image: url('images/external-link.png?1346624729'), -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 0.8) 100%);
+  background-image: url('images/external-link.png?1346624729'), radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 0.8) 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  content: '';
+  display: none;
+  height: 9px;
+  margin: 0;
+  padding: 1px;
   position: absolute;
-  vertical-align: middle;
-  width: 12px;
+  right: -8px;
+  top: 25%;
+  width: 10px;
+  z-index: 1;
+}
+.scott a[rel="external"]:hover::after {
+  display: block;
 }
 .scott b, .scott strong {
   font-weight: 700;
@@ -72,9 +82,9 @@ body.scott {
   margin-right: 0;
 }
 .scott h1, .scott h2, .scott h3, .scott h4, .scott h5, .scott h6, .scott p, .scott pre, .scott blockquote {
+  -webkit-margin-collapse: collapse;
   margin-top: 15px;
   margin-bottom: 15px;
-  -webkit-margin-collapse: collapse;
 }
 .scott dl, .scott dt, .scott dd {
   margin-left: 0;
@@ -96,6 +106,7 @@ body.scott {
   background: #eeeeee;
   border: 1px solid rgba(150, 150, 150, 0.07);
   font-size: 11px;
+  line-height: normal;
 }
 .scott code {
   display: inline-block;
@@ -108,7 +119,7 @@ body.scott {
   overflow: auto;
   padding: .6em .8em;
   position: relative;
-  white-space: pre;
+  white-space: pre-wrap;
   word-wrap: normal;
 }
 .scott pre code {
