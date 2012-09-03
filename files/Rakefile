@@ -1,5 +1,5 @@
 task :default do
-	exec "rake -sT"
+	exec "rake -sf '#{__FILE__}' -T"
 end
 
 desc "Remove generated files and the sass cache"
