@@ -7,9 +7,9 @@ $experimental-support-for-opera: false;
 
 @import "compass/css3";
 
-$font_body: "Lucida Grande", "Lucida Sans", "Helvetica", sans-serif;
-$font_code: "Menlo", "Monaco", "Courier New", monospace;
-$font_heading: "Helvetica Neue", "Helvetica", sans-serif;
+$font_body: "Lucida Grande", "Lucida Sans", Helvetica, sans-serif;
+$font_code: Menlo, Monaco, "Courier New", monospace;
+$font_heading: "Helvetica Neue", Helvetica, sans-serif;
 
 $font_size: 12px;
 
@@ -19,7 +19,7 @@ $body__bg: #fff;
 $blockquote: #444;
 
 $code__bg: #eee;
-$code_font-size: $font-size - 1;
+$code_font-size: 90%;
 
 $heading: $body;
 
@@ -179,6 +179,7 @@ body.scott {
 			background: transparent;
 			border: none;
 			display: inline;
+			font-size: 100%;
 			padding: 0;
 			white-space: pre;
 			word-wrap: normal;
@@ -241,7 +242,7 @@ body.scott {
 				family: $font_heading;
 				size: 18px;
 			};
-			height: auto;
+			height: 100%;
 			line-height: inherit;
 			margin: 0;
 			overflow-x: hidden;
@@ -342,7 +343,7 @@ body.scott {
 		color: #222;
 		display: block;
 		font: {
-			size: $font-size - 1;
+			size: 90%;
 			weight: 500;
 		};
 		height: auto;
@@ -437,7 +438,7 @@ body.scott {
 	}
 
 	div.footnotes {
-		font-size: $font_size - 1;
+		font-size: 90%;
 		padding: 1em;
 
 		li > p {
