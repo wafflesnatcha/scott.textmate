@@ -454,14 +454,18 @@ body.scott {
 	.notice.error {
 		@include box-shadow(
 			0 50px 50px -40px rgba(255,100,100,.1) inset,
-			0 0 3px 0 rgba(255,0,0,.5) inset,
-			0 0 1px rgba(80,0,0,.3)
+			0 1px 2px 0 rgba(0,0,0,.3) inset,
+			0 2px 2px -2px rgba(0,0,0,.7)
 		);
-		@include border-radius(3px);
+		@include border-radius(5px);
 		background: #fff8f8;
-		border: 1px solid #e30b0b;
-		padding: 5px 8px 6px;
+		border: 2px solid #C73C3C;
+		border: {
+			bottom-color: #de4343;
+			top-color: #de4343;
+		};
 		margin: 0;
+		padding: 5px 8px 6px;
 	}
 
 	// Module Specific Styles
