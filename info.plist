@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactName</key>
+	<string>Scott Buchanan</string>
+	<key>description</key>
+	<string>Alternative Web Preview Theme</string>
+	<key>name</key>
+	<string>Scott Web Preview Theme</string>
+	<key>uuid</key>
+	<string>AA5C9FD9-7826-4F41-BB4B-20C4237A6EF2</string>
+</dict>
+</plist>
